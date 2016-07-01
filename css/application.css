@@ -19,7 +19,7 @@ html, body{
 }
 
 body{
-  background: #000 url('images/body_bg.jpg') no-repeat 50% 0;
+  background: #000 url('images/body_bg.jpg') no-repeat 50% 0 fixed;
   -webkit-background-size: cover;
   background-size: cover;
 
@@ -33,6 +33,19 @@ body{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* clearfix */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
 
 /* section wrapper content */
 .section_content{
@@ -85,3 +98,69 @@ a{
   margin: 10px;
   border-bottom: 1px solid #FF9800;
 }
+
+/* code style */
+pre{
+  overflow: auto;
+  background-color: #ccc;
+  border-left: 5px solid #FF9800;
+  color: #4d4e53;
+  font-weight: 400;  
+}
+
+/* student info */
+.student_info{}
+  .student_info img{ 
+    width: 200px; 
+    height: auto;
+    display: inline-block;
+    max-width: 100%;
+
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+/* lessons_navigation */
+.lessons_navigation{
+  clear: both;
+}
+  .lessons_navigation a{
+    width: 20%;
+    float: left;
+    padding: 10px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: all .1s ease;
+
+    font-weight: 800;
+    
+    background-blend-mode: luminosity;
+  }
+    .lessons_navigation a:after{
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+    .lessons_navigation a:hover{
+      color: #fff;
+      text-decoration: underline;
+      border: 3px solid #fff;
+
+      background-blend-mode: normal;
+    }
+    /**/
+    .lessons_navigation a.web_request{
+      background: #000 url('images/web_request.jpg') 50%;
+
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    .lessons_navigation a.vcs{
+      background: #000 url('images/vcs.jpg') 50%;
+
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
