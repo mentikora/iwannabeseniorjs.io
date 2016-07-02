@@ -113,6 +113,13 @@ pre{
   font-weight: 400;  
 }
 
+/* images */
+img.screenshot{
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+
 /* student info */
 .student_info{}
   .student_info img{ 
