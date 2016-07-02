@@ -11,7 +11,6 @@
 
 html, body{
   width: 100%;  
-  height: 100%;
   min-height: 100%;
   padding: 0;
   margin: 0;
@@ -85,6 +84,11 @@ h1,h2,h3{
 .comment{
   font-size: 12px;
   color: rgba(255,255,255, .5);
+  padding: 5px;
+  border: 1px dashed #ccc;
+  background-color: rgba(255,255,255, .5);
+  margin: 10px 0;
+  display: inline-block;
 }
 
 /* link's */
@@ -108,6 +112,14 @@ pre{
   font-weight: 400;  
 }
 
+/* images */
+img.screenshot{
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin: 10px 0;
+}
+
 /* student info */
 .student_info{}
   .student_info img{ 
@@ -128,6 +140,7 @@ pre{
     width: 20%;
     float: left;
     padding: 10px;
+    height: 150px;
   
     display: flex;
     justify-content: center;
@@ -139,15 +152,10 @@ pre{
     
     background-blend-mode: luminosity;
   }
-    .lessons_navigation a:after{
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-    }
     .lessons_navigation a:hover{
       color: #fff;
       text-decoration: underline;
-      border: 3px solid #fff;
+      box-shadow: inset 0 0 0 3px #fff;
 
       background-blend-mode: normal;
     }

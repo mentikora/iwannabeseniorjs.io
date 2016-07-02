@@ -9,11 +9,17 @@
 	<section class="section_content">
 		<a href="index.html">&larr; back</a>
 		<h1>Web Request & Response</h1>
+		<p class="text_style">
+			Homework info: <a href="https://gist.github.com/itspoma/a1efa174ebb9914eecac" target="_blank">https://gist.github.com/itspoma/a1efa174ebb9914eecac</a>
+			<br>
+			All hometask images on dropbox: <a href="https://www.dropbox.com/sh/nb1pi9sl486x3q6/AAC8eYVNQaKLnvbUOV_mA_Zoa?dl=0" target="_blank"> click here</a>
+		</p>
 		<div class="divider"></div>
 
-		<h2>Play with Chrome Developers Toolkit (DevTools), and "Network" tab (5 points)</h2>
+		<h2>1.Play with Chrome Developers Toolkit (DevTools), and "Network" tab (5 points)</h2>
 		<div class="text_style">
-			<h3>Site #1: <a href="javascript: void(0);">ex.ua</a></h3>
+			Site #1: <a href="javascript: void(0);">ex.ua</a>
+			<br><br>
 			General:
 			<pre>
 				<code>
@@ -53,8 +59,10 @@
 				User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
 				</code>
 			</pre>
+			<img src="img/lesson1/q1-exua.jpg" alt="" class="screenshot">
 
-			<h3>Site #2: <a href="javascript: void(0);">instagram.com</a></h3>
+			Site #2: <a href="javascript: void(0);">instagram.com</a>
+			<br><br>
 			General:
 			<pre>
 				<code>
@@ -100,8 +108,10 @@
 				user-agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
 				</code>
 			</pre>
+			<img src="img/lesson1/q1-insta.jpg" alt="" class="screenshot">
 
-			<h3>Site #3: <a href="javascript: void(0);">online-go.com</a></h3>
+			Site #3: <a href="javascript: void(0);">online-go.com</a>
+			<br><br>
 			General:
 			<pre>
 				<code>
@@ -139,8 +149,10 @@
 				User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
 				</code>
 			</pre>
+			<img src="img/lesson1/q1-onlinego.jpg" alt="" class="screenshot">
 
-			<h3>Site #4: <a href="javascript: void(0);">tinypng.com</a></h3>
+			Site #4: <a href="javascript: void(0);">tinypng.com</a>
+			<br><br>
 			General:
 			<pre>
 				<code>
@@ -175,8 +187,9 @@
 				User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
 				</code>
 			</pre>
-
-			<h3>Site #5: <a href="javascript: void(0);">github.com</a></h3>
+			<img src="img/lesson1/q1-tinypng.jpg" alt="" class="screenshot">
+			Site #5: <a href="javascript: void(0);">github.com</a>
+			<br><br>
 			General:
 			<pre>
 				<code>
@@ -228,7 +241,7 @@
 				User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
 				</code>
 			</pre>
-
+			<img src="img/lesson1/q1-github.jpg" alt="" class="screenshot">
 
 			Cache-Control - директиви для керування кешуванням<br>
 			Connection - відомості про проведення з'єднання<br>
@@ -238,33 +251,92 @@
 			Expires - дата закінчення терміну<br>
 			Keep-Alive - час сесії... мабуть) <br>		
 			Pragma - особливі опції при виконанні<br>
-			Server - назва серверу<br>
+			Server - назва серверу і його версія з компонентами<br>
 			Transfer-Encoding - спосіб кодування <br>
 			Vary - опис ресурсів, які були вказані при запиті<br>
 			Accept - список допустимих форматів <br>
 			Content-Language - мова <br>
 			Host - ім"я домену і хост ресурсу <br>
 			User-Agent - ПО клієнта і його характеристики <br>
-			<div class="comment">
+			<span class="comment">
 				Source, wiki page: <a href="https://goo.gl/bdYAEL">https://goo.gl/bdYAEL</a>
-			</div>
+			</span>
 			
 		</div>
 
-		<h2>What is differenct between HTTP version 1.0 and 1.1? (1 point)</h2>
-		<p class="text_style">answer</p>
-		<h2>Use the "telnet" program (1 point)</h2>
-		<p class="text_style">answer</p>
-		<h2>Use actions on "Network" tab (1 point)</h2>
-		<p class="text_style">answer</p>
-		<h2>Using the https://www.hurl.it/ (2 points)</h2>
-		<p class="text_style">answer</p>
-		<h2>Using the https://www.hurl.it/ (2 points) v2</h2>
-		<p class="text_style">answer</p>
-		<h2>Find and show few (at least 5) resources, where POST method is used (5 points)</h2>
-		<p class="text_style">answer</p>
-		<h2>Using the Postman extension (6 points)</h2>
-		<p class="text_style">answer</p>
+		<h2>2.What is differenct between HTTP version 1.0 and 1.1? (1 point)</h2>
+		<p class="text_style">
+			Найбільша різниця - HTTP/1.0 передбачає передачу тільки одного запиту і однієї відповіді під час з'їднання, HTTP/1.1 - багатьох
+			<br><br>
+			Метод GET відправляє всю зібрану інформацію в URL, макс об"єм - 8кб 
+			<br>
+			Зазвичай використовується для представлених пошукових запитів і у випадках, щоб користувач мав можливість перейти на поточну сторінку ще раз.
+			<br>
+			<br>
+			Метод POST - стандартним потоком, без додавання чогось в URL, макс об"єм - 255 символів
+			<br>
+			Використовується для більш захищених запитів, де дані можуть бути використані для зміни бази даних, інше
+		</p>
+
+		<h2>3.Use the "telnet" program (1 point)</h2>
+		<p class="text_style">
+			<img src="img/lesson1/q3-googleStatusGET.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q3-googleStatusHEAD.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q3-status200.jpg" alt="" class="screenshot">
+		</p>
+
+		<h2>4.Use actions on "Network" tab (1 point)</h2>
+		<p class="text_style">
+			Ф-ції для тесту: вкладки JS/CSS/Img, фільтр по файлам
+			<br>
+			Основні моменти в майбутньому - оптимізація файлів для швидкодії сайту, пошук елементів, які не загрузились
+		</p>
+
+		<h2>5.Using the https://www.hurl.it/ (2 points)</h2>
+		<p class="text_style">
+			<img src="img/lesson1/q5.jpg" alt="" class="screenshot">
+			Cache-Control - директиви для керування кешуванням <br>
+			Connection - відомості про проведення з'єднання<br>
+			Content-Encoding - спосіб кодування <br> 
+			Content-Type - формат і спосіб представлення<br>
+			Date - дата запиту<br>
+			Expires - дата закінчення терміну<br>
+			Pragma - особливі опції при виконанні<br>
+			Server - назва серверу і його версія з компонентами<br>
+			Transfer-Encoding - способи кодування, які були використані для передачі
+			Vary - опис ресурсів, які були вказані при запиті<br>
+			X-Powered-By - на якій мові програмування написано
+		</p>
+
+		<h2>6.Using the https://www.hurl.it/ (2 points) v2</h2>
+		<p class="text_style">
+			<img src="img/lesson1/q6-get.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q6-post.jpg" alt="" class="screenshot">
+			HEAD є ідентичним GET за винятком того, що сервер не повинен повертати тіло повідомлення у відповіді. Вся інформація, що міститься в заголовках HTTP у відповідь на запит HEAD, повинна бути ідентична інформації, надісланій у відповідь на запит GET.
+		</p>
+
+		<h2>7.Find and show few (at least 5) resources, where POST method is used (5 points)</h2>
+		<p class="text_style">
+			<a href="https://adster.io/users/sign_in" target="_blank">https://adster.io/users/sign_in</a>, після нажаття на кнопку "Вход"
+			<img src="img/lesson1/q7-adster.jpg" alt="" class="screenshot">
+			<a href="javascript: void(0);">facebook.com</a>, при виході з акаунту
+			<img src="img/lesson1/q7-facebook.jpg" alt="" class="screenshot">
+			<a href="javascript: void(0);">google.com</a>, сторінка зміни паролю акаунту
+			<img src="img/lesson1/q7-google.jpg" alt="" class="screenshot">
+			<a href="javascript: void(0);">ua.linkedin.com</a>, при вході в акаунт
+			<img src="img/lesson1/q7-linkedin.jpg" alt="" class="screenshot">
+			<a href="javascript: void(0);">ukr.net</a>, перегляд вхідних повідомлень
+			<img src="img/lesson1/q7-ukrnet.jpg" alt="" class="screenshot">
+		</p>
+
+		<h2>8.Using the Postman extension (6 points)</h2>
+		<p class="text_style">
+			<img src="img/lesson1/q8-fb-get.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q8-fb-head.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q8-fb-post.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q8-fb-option.jpg" alt="" class="screenshot">
+			<img src="img/lesson1/q8-fb-patch.jpg" alt="" class="screenshot">
+		</p>
 	</section>
 </body>
 </html>
