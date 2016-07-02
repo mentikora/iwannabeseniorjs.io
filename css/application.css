@@ -118,6 +118,7 @@ img.screenshot{
   width: 100%;
   display: inline-block;
   text-align: left;
+  margin: 10px 0;
 }
 
 /* student info */
