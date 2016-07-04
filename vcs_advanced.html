@@ -32,6 +32,9 @@
 		git add -A
 		git commit -m "some commit 2"
 		touch .gitignore
+		<--
+			в .gitignore додаєм uploads/
+		-->
 		git checkout master
 		git merge architecture
 		git branch -d architecture
@@ -49,6 +52,7 @@
 		git add vcs_advantages.html
 		git commit -m "vcs_advantages.html"
 		git tag -a v0.1 -m "we started new version"
+		git push
 			</code>
 		</pre>
 
