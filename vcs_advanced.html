@@ -28,11 +28,13 @@
 		cd assets/
 		touch all.js
 		touch css.js
+		cd ..
 		git add -A
 		git commit -m "some commit 2"
 		touch .gitignore
 		git checkout master
 		git merge architecture
+		git branch -d architecture
 			</code>
 		</pre>
 
