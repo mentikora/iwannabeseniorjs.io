@@ -42,9 +42,19 @@
 		</pre>
 
 		<h2>2. Rebase</h2>
-		<p class="text_style">
-			asdad
-		</p>
+		<pre>
+			<code>
+		git checkout rebase_branch
+		git checkout master
+		git add 
+		git commit 
+		git checkout rebase_branch
+		git rebase master
+		git checkout master
+		git merge rebase_branch
+		git branch -d rebase_branch
+			</code>
+		</pre>
 
 		<h2>3. Tag</h2>
 		<pre>
@@ -94,14 +104,6 @@
 		git merge architecture
 			</code>
 		</pre>
-			
-		<!-- 
-			rebase test 1
-		 -->
-
-		 <!-- 
-		 	rebase test 2
-		  -->
 		</p>
 	</section>
 </body>
