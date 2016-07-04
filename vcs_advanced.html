@@ -19,6 +19,10 @@
 		<h2>1. Робота з бренчами</h2>
 		<pre>
 			<code>
+		git checkout -b architecture	
+		mkdir assets                
+		mkdir uploads
+		touch index_1.html
 		git add -A
 		git commit -m "some commit"
 		cd assets/
@@ -27,6 +31,8 @@
 		git add -A
 		git commit -m "some commit 2"
 		touch .gitignore
+		git checkout master
+		git merge architecture
 			</code>
 		</pre>
 
