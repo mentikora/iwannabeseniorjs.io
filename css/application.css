@@ -172,3 +172,9 @@ img.screenshot{
       -webkit-background-size: cover;
       background-size: cover;
     }
+    .lessons_navigation a.intro_js{
+      background: #000 url('images/introduction_js.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
