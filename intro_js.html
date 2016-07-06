@@ -95,17 +95,48 @@
 
     <h2>5. Create “Guess number” game.</h2>
     <p class="text_style">
-      - Create variable for random number (from 0 to 100) and set it using Math.random()
-      // tip: Math.random() returns number from 0 to 1, so you have to 
-      // multiply it by 100 and then convert result to integer.
-      - Ask user (with prompt) to guess the number
-      - If entered number doesn’t equal to our variable, alert “Our number is higher, try again” or “Our number is lower, try again”. Then ask user to enter number again.
-      - If user guessed the number, show message “You are right, the number is [number]”.
+      - Create variable for random number (from 0 to 100) and set it using Math.random() <br>
+      // tip: Math.random() returns number from 0 to 1, so you have to <br>
+      // multiply it by 100 and then convert result to integer. <br>
+      - Ask user (with prompt) to guess the number <br>
+      - If entered number doesn’t equal to our variable, alert “Our number is higher, try again” or “Our number is lower, try again”. Then ask user to enter number again. <br>
+      - If user guessed the number, show message “You are right, the number is [number]”. <br>
     </p>
+    <div class="comment">
+      Guess number game with attempts for fast exit if user going to RAAAAGEEE!
+    </div>
     <pre>
-      <code></code>
+      <code>
+    function q5(){
+      var num = parseInt( Math.random()*100 ); 
+      var attempts = 1;
+
+      for(attempts; attempts <= 6; ){
+        if ( attempts == 6) {
+          alert('Sorry, but you lost, right number was: ' + num);
+          return;
+        }
+        var userNumber = parseInt(prompt('Guess number', ''));          
+
+        if ( userNumber == num ) {
+          alert('You are right, the number is ' + num);
+          return;
+        }  
+
+        if ( userNumber < num) {
+          alert('Our number is higher, try again, attempt ' + attempts);
+          attempts++;
+        } else{
+          alert('Our number is lower, try again, attempt ' + attempts);
+          attempts++;
+        }
+        
+        console.log(num, userNumber);
+      }
+    }
+      </code>
     </pre>
-    <button>show result</button>
+    <button onclick="q5()">show result</button>
     <br><br>
   <script>
     function q1(){
@@ -139,6 +170,33 @@
           console.log('# # # # # ');
         }
         x++;
+      }
+    }
+    function q5(){
+      var num = parseInt( Math.random()*100 ); 
+      var attempts = 1;
+
+      for(attempts; attempts <= 6; ){
+        if ( attempts == 6) {
+          alert('Sorry, but you lost, right number was: ' + num);
+          return;
+        }
+        var userNumber = parseInt(prompt('Guess number', ''));          
+
+        if ( userNumber == num ) {
+          alert('You are right, the number is ' + num);
+          return;
+        }  
+
+        if ( userNumber < num) {
+          alert('Our number is higher, try again, attempt ' + attempts);
+          attempts++;
+        } else{
+          alert('Our number is lower, try again, attempt ' + attempts);
+          attempts++;
+        }
+        
+        console.log(num, userNumber);
       }
     }
   </script>
