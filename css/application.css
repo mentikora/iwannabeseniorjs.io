@@ -192,3 +192,18 @@ img.screenshot{
       -webkit-background-size: cover; 
       background-size: cover; 
     }
+
+button{
+  color: #fff;
+  background: #FF9800;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  transition: all .2s ease;
+}
+button:hover{
+  background-color: #ffac32;
+  text-shadow: 0 0 3px rgba(0,0,0,.25);
+}
