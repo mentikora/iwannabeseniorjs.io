@@ -1,21 +1,205 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <title>iwannabeseniorjs.io</title>
   <link rel="stylesheet" type="text/css" href="css/application.css">
 </head>
 <body>
-	<section class="section_content">
-		<a href="index.html">&larr; back</a>
-		<h1>Introduction to JS</h1>
-		<p class="text_style">
-			Homework info: <a href="https://gist.github.com/KryvunRoman/bff39e47278a9c10820a49b70c8284d1" target="_blank">https://gist.github.com/KryvunRoman/bff39e47278a9c10820a49b70c8284d1</a>
-		</p>
-		<div class="divider"></div>
+  <section class="section_content">
+    <a href="index.html">&larr; back</a>
+    <h1>Introduction to JS</h1>
+    <p class="text_style">
+      Homework info: <a href="https://gist.github.com/KryvunRoman/bff39e47278a9c10820a49b70c8284d1" target="_blank">https://gist.github.com/KryvunRoman/bff39e47278a9c10820a49b70c8284d1</a>
+    </p>
+    <div class="divider"></div>
 
-		deadline 11.07.2016
+    <h2>1. Prepare and show message in console.</h2>
+    <p class="text_style">
+      Create variables for person name, time, place and event <br>
+      - Event should be entered using prompt <br> 
+      - Other variables should be set as you wish <br>
+      - Join all values to one sentence and show it in console <br>
+    </p>
+    <pre>
+      <code>
+    function q1(){
+      var name = 'Roman', 
+          time = '00:00', 
+          place = "at home", 
+          event = prompt('Enter event', 'walking');
+          console.log(name + ' will ' + event + ' today ' + place + ' at ' + time);
+    }
+      </code>
+    </pre>
+    <button onclick="q1()">show result</button>
+    <br><br>
 
-	</section>
+    <h2>2. Find and show (using alert) distance between 2 points.</h2>
+    <p class="text_style">
+      Find and show (using alert) distance between 2 points. <br>
+      - Create variables for x1, y1, x2, y2, result <br>
+      - Coordinates of second point (X2, Y2) should be entered using prompt <br>
+      - Other variables should be set as you wish <br>
+      - Find distance, set it to result variable <br> 
+      - Alert the result with description <br>
+    </p>
+    <pre>
+      <code>
+    function q2(){
+      var x1 = 0, 
+          y1 = 1, 
+          x2 = parseInt(prompt('Enter second point x-coord:', '')), 
+          y2 = parseInt(prompt('Enter second point y-coord:', '')),
+          distance = parseInt(Math.hypot(x2-x1, y2-y1));
+      alert('The distance between points A(' + x1 +','+ y1 +') and B('+ x2 +','+ y2 +') is '+ distance);
+    }  
+      </code>
+    </pre>
+    <button onclick="q2()">show result</button>
+    <br><br>
+
+    <h2>3. Show in console using FOR.</h2>
+    <pre>
+      <code>
+    function q3(){
+      var i;
+      var out = '';
+      for(i = 0; i < 10; i++){
+        console.log( out += '#' );
+      }
+    }
+      </code>
+    </pre>
+    <button onclick="q3()">show result</button>
+    <br><br>
+
+    <h2>4. Show in console using WHILE.</h2>
+    <pre>
+      <code>
+    function q4(){
+      var x = 0;
+      while (x < 7){
+        if (x % 2) {
+          console.log(' # # # # #');  
+        } else {
+          console.log('# # # # # ');
+        }
+        x++;
+      }
+    }
+      </code>
+    </pre>
+    <button onclick="q4()">show result</button>
+    <br><br>
+
+    <h2>5. Create “Guess number” game.</h2>
+    <p class="text_style">
+      - Create variable for random number (from 0 to 100) and set it using Math.random() <br>
+      // tip: Math.random() returns number from 0 to 1, so you have to <br>
+      // multiply it by 100 and then convert result to integer. <br>
+      - Ask user (with prompt) to guess the number <br>
+      - If entered number doesn’t equal to our variable, alert “Our number is higher, try again” or “Our number is lower, try again”. Then ask user to enter number again. <br>
+      - If user guessed the number, show message “You are right, the number is [number]”. <br>
+    </p>
+    <div class="comment">
+      Guess number game with attempts for fast exit if user going to RAAAAGEEE!
+    </div>
+    <pre>
+      <code>
+    function q5(){
+      var num = parseInt( Math.random()*100 ); 
+      var attempts = 1;
+
+      for(attempts; attempts <= 6; ){
+        if ( attempts == 6) {
+          alert('Sorry, but you lost, right number was: ' + num);
+          return;
+        }
+        var userNumber = parseInt(prompt('Guess number', ''));          
+
+        if ( userNumber == num ) {
+          alert('You are right, the number is ' + num);
+          return;
+        }  
+
+        if ( userNumber < num) {
+          alert('Our number is higher, try again, attempt ' + attempts);
+          attempts++;
+        } else{
+          alert('Our number is lower, try again, attempt ' + attempts);
+          attempts++;
+        }
+        
+        console.log(num, userNumber);
+      }
+    }
+      </code>
+    </pre>
+    <button onclick="q5()">show result</button>
+    <br><br>
+  <script>
+    function q1(){
+      var name = 'Roman', 
+          time = '00:00', 
+          place = "at home", 
+          event = prompt('Enter event', 'walking');
+          console.log(name + ' will ' + event + ' today ' + place + ' at ' + time);
+    }
+    function q2(){
+      var x1 = 0, 
+          y1 = 1, 
+          x2 = parseInt(prompt('Enter second point x-coord:', '')), 
+          y2 = parseInt(prompt('Enter second point y-coord:', '')),
+          distance = parseInt(Math.hypot(x2-x1, y2-y1));
+      alert('The distance between points A(' + x1 +','+ y1 +') and B('+ x2 +','+ y2 +') is '+ distance);
+    }
+    function q3(){
+      var i;
+      var out = '';
+      for(i = 0; i < 10; i++){
+        console.log( out += '#' );
+      }
+    }
+    function q4(){
+      var x = 0;
+      while (x < 7){
+        if (x % 2) {
+          console.log(' # # # # #');  
+        } else {
+          console.log('# # # # # ');
+        }
+        x++;
+      }
+    }
+    function q5(){
+      var num = parseInt( Math.random()*100 ); 
+      var attempts = 1;
+
+      for(attempts; attempts <= 6; ){
+        if ( attempts == 6) {
+          alert('Sorry, but you lost, right number was: ' + num);
+          return;
+        }
+        var userNumber = parseInt(prompt('Guess number', ''));          
+
+        if ( userNumber == num ) {
+          alert('You are right, the number is ' + num);
+          return;
+        }  
+
+        if ( userNumber < num) {
+          alert('Our number is higher, try again, attempt ' + attempts);
+          attempts++;
+        } else{
+          alert('Our number is lower, try again, attempt ' + attempts);
+          attempts++;
+        }
+        
+        console.log(num, userNumber);
+      }
+    }
+  </script>
+  </section>
 </body>
 </html>
