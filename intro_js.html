@@ -60,18 +60,6 @@
     <br><br>
 
     <h2>3. Show in console using FOR.</h2>
-    <p class="text_style">
-      # <br>
-      ## <br>
-      ### <br>
-      #### <br> 
-      ##### <br>
-      ###### <br>
-      ####### <br> 
-      ######## <br>
-      ######### <br>
-      ########## <br>
-    </p>
     <pre>
       <code>
     function q3(){
@@ -88,12 +76,32 @@
 
     <h2>4. Show in console using WHILE.</h2>
     <pre>
-      <code></code>
+      <code>
+    function q4(){
+      var x = 0;
+      while (x < 7){
+        if (x % 2) {
+          console.log(' # # # # #');  
+        } else {
+          console.log('# # # # # ');
+        }
+        x++;
+      }
+    }
+      </code>
     </pre>
-    <button>show result</button>
+    <button onclick="q4()">show result</button>
     <br><br>
 
     <h2>5. Create “Guess number” game.</h2>
+    <p class="text_style">
+      - Create variable for random number (from 0 to 100) and set it using Math.random()
+      // tip: Math.random() returns number from 0 to 1, so you have to 
+      // multiply it by 100 and then convert result to integer.
+      - Ask user (with prompt) to guess the number
+      - If entered number doesn’t equal to our variable, alert “Our number is higher, try again” or “Our number is lower, try again”. Then ask user to enter number again.
+      - If user guessed the number, show message “You are right, the number is [number]”.
+    </p>
     <pre>
       <code></code>
     </pre>
@@ -120,6 +128,17 @@
       var out = '';
       for(i = 0; i < 10; i++){
         console.log( out += '#' );
+      }
+    }
+    function q4(){
+      var x = 0;
+      while (x < 7){
+        if (x % 2) {
+          console.log(' # # # # #');  
+        } else {
+          console.log('# # # # # ');
+        }
+        x++;
       }
     }
   </script>
