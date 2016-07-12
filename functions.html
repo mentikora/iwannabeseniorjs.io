@@ -35,7 +35,37 @@
     </pre>
     <button onclick="q1()">show result</button>
   <script>
+  
+  function q1(){
+    var start = confirm("So, you wanna start a Game? *evil laugh*");
+
+    if (!start) { return alert('Bye-bye, see you again next time! *evil sorrow*') }
+
+
+    var attempts = 3;
+    var prizeLoot = 0;  
     
+    var game = function(prizeLoot, attempts) {
+      //var createRandomNumber = parseInt(Math.random() * 6);
+      var createRandomNumber = 2;
+      var userNumber = parseInt(prompt("Guess number ranging 0 - 5"));
+
+      console.log(start, createRandomNumber, userNumber);
+
+      if (userNumber === createRandomNumber) {
+        prizeLoot += 10;
+      } else{
+        attempts--;
+        prizeLoot
+      }
+
+      console.log(prizeLoot);
+    }
+
+    game();
+
+    
+  };
   </script>
   </section>
 </body>
