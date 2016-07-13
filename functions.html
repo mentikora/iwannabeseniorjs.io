@@ -47,7 +47,7 @@
       var prizeStep = 1;
 
       var createRandomNumber = 2;//parseInt(Math.random() * 6);
-      var userNumber = prompt("Guess number ranging 0 - 5");
+      
 
       var round = function(prize, userStep){
         var x = 0;
@@ -71,19 +71,30 @@
       };
       
       // console.log(attempt(prize, 1));
-      if(createRandomNumber == userNumber){
-        round(prize, userStep);
-        console.log('Right! You win ' + prize);
-        var p = confirm('Next?');
-        if(p){
-          prize = attempt(prize, prizeStep + 1);
-          console.log('Prize for 1th place is ' + prize );
-        }
-      } else {
-        round(prize, userStep-1)
-        console.log('False');
+      function us(userStep){
+        
+        if (userStep>0) {
+          var userNumber = prompt("Guess number ranging 0 - 5");
+
+          if(createRandomNumber == userNumber){
+            round(prize, userStep);
+            console.log('Right! You win ' + prize);
+            var p = confirm('Next?');
+            if(p){
+              prize = attempt(prize, prizeStep + 1);
+              console.log('Prize for 1th place is ' + prize );
+              us(3);
+            }
+          } 
+          else {
+            prize = round(prize, userStep-1);
+            console.log('False');
+            us(userStep-1);
+          }
+        } 
+        console.log('random is:'+createRandomNumber, 'user number is: '+userNumber);
       }
-      console.log('random is:'+createRandomNumber, 'user number is: '+userNumber);
+      us(3);
 
     }
     game();    
