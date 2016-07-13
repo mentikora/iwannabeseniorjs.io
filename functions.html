@@ -30,7 +30,41 @@
     </p>
     <pre>
       <code>
+    var start = confirm("So, you wanna play a Game? *evil laugh*");
+    if (!start) { alert('Bye-bye, see you again next time! *evil sorrow*') }
 
+          
+    var userStep = 3;
+    var prize = 10;
+    var prizeStep = 1;
+    var balance = 0;
+
+    while(true) {
+      var createRandomNumber = parseInt(Math.random() * 6);;
+      var success = false;
+      for(var i = userStep; i > 0; i--){
+        var userNumber = parseInt(prompt('Guess number ranging 0 - 5'));
+        if (createRandomNumber === userNumber) {
+          console.log('My congratulations!')
+          i = 0;
+          success = true;
+          balance += prize;
+          prize = prize * 3;
+
+        } else {
+          console.log('"sorry" seems to be the hardest word.');
+          prize = parseInt(prize / 2);
+        }    
+      }  
+      var next = confirm('One more round?');
+      if (!next) { 
+        console.log('You win ' + balance + '$');
+        break; 
+      } else {
+        if (!success) {
+          prize = 10;
+        }
+      }
       </code>
     </pre>
     <button onclick="q1()">show result</button>
@@ -38,16 +72,44 @@
   
   function q1(){
     var start = confirm("So, you wanna play a Game? *evil laugh*");
-    if (!start) { return alert('Bye-bye, see you again next time! *evil sorrow*') }
+    if (!start) { alert('Bye-bye, see you again next time! *evil sorrow*') }
 
-    function game(){
-      
-      var userStep = 3;
-      var prize = 10;
-      var prizeStep = 1;
+          
+    var userStep = 3;
+    var prize = 10;
+    var prizeStep = 1;
+    var balance = 0;
 
-      var createRandomNumber = 2;//parseInt(Math.random() * 6);
+    while(true) {
+      var createRandomNumber = parseInt(Math.random() * 6);;
+      var success = false;
+      for(var i = userStep; i > 0; i--){
+        var userNumber = parseInt(prompt('Guess number ranging 0 - 5'));
+        if (createRandomNumber === userNumber) {
+          console.log('My congratulations!')
+          i = 0;
+          success = true;
+          balance += prize;
+          prize = prize * 3;
+
+        } else {
+          console.log('"sorry" seems to be the hardest word.');
+          prize = parseInt(prize / 2);
+        }    
+      }  
+      var next = confirm('One more round?');
+      if (!next) { 
+        console.log('You win ' + balance + '$');
+        break; 
+      } else {
+        if (!success) {
+          prize = 10;
+        }
+      }
+    }
       
+      /*
+      try later
 
       var round = function(prize, userStep){
         var x = 0;
@@ -61,7 +123,6 @@
         }
         return prize + x
       };
-      // console.log(round(prize, userStep));
 
       var attempt = function(prize, prizeStep){
         for (var i = 1; prizeStep > i; i++) {
@@ -70,7 +131,6 @@
         return prize
       };
       
-      // console.log(attempt(prize, 1));
       function us(userStep){
         
         if (userStep>0) {
@@ -94,10 +154,9 @@
         } 
         console.log('random is:'+createRandomNumber, 'user number is: '+userNumber);
       }
-      us(3);
 
-    }
-    game();    
+      us(3);*/
+  
 
   }
   </script>
