@@ -107,57 +107,6 @@
         }
       }
     }
-      
-      /*
-      try later
-
-      var round = function(prize, userStep){
-        var x = 0;
-        for (var i = 3; userStep < i; i--) {
-          if (userStep === 0) {
-            console.log('Bye-bye');
-            prize = x = 0;
-            break;
-          }
-          prize = parseInt(prize/2);
-        }
-        return prize + x
-      };
-
-      var attempt = function(prize, prizeStep){
-        for (var i = 1; prizeStep > i; i++) {
-          prize *= 3
-        }
-        return prize
-      };
-      
-      function us(userStep){
-        
-        if (userStep>0) {
-          var userNumber = prompt("Guess number ranging 0 - 5");
-
-          if(createRandomNumber == userNumber){
-            round(prize, userStep);
-            console.log('Right! You win ' + prize);
-            var p = confirm('Next?');
-            if(p){
-              prize = attempt(prize, prizeStep + 1);
-              console.log('Prize for 1th place is ' + prize );
-              us(3);
-            }
-          } 
-          else {
-            prize = round(prize, userStep-1);
-            console.log('False');
-            us(userStep-1);
-          }
-        } 
-        console.log('random is:'+createRandomNumber, 'user number is: '+userNumber);
-      }
-
-      us(3);*/
-  
-
   }
   </script>
   </section>
