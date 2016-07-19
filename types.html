@@ -26,6 +26,23 @@
       </code>
     </pre>
     <button onclick="q1()">show result</button>
+    <script>
+      function q1(){
+        var arr = ['1', 2, {}, '2']
+        function a(array){
+
+          var exit = [];
+          array.forEach(function(item, i, array){
+            exit.push(typeof(item));
+          });
+
+
+
+          console.log( exit  );
+        }
+        a(arr);
+      }
+    </script>
     <br>
 
     <h2>2. Напишіть додаткові функції для роботи з масивами</h2>
@@ -45,10 +62,109 @@
     </p>
     <pre>
       <code>
+    var arr = [10,20,30];
+
+    // rangeToArray
+    function rangeToArray(rangeStart, rangeStop, rangeStep){
+      var testArr = [];
+      if(rangeStart > rangeStop){
+        var x = rangeStop;
+        rangeStop = rangeStart;
+        rangeStart = x;
+      }
+      for(var i = rangeStart; i <= rangeStop; i += rangeStep){
+        testArr.push(i);
+      }
+      return testArr;
+    }
+    rangeToArray(5,5,2); //[5]
+    rangeToArray(1,5,1); //[1, 2, 3, 4, 5]
+
+    //sumArray
+    function sumArray(arr){
+      var sum = arr.reduce( function(sum, currentItem){
+        return sum + currentItem;
+      });
+      return sum;
+    }
+    sumArray(arr); //60
+
+    //multiplyArray
+    function multiplyArray(arr){
+      var multi = arr.reduce( function(multi, currentItem){
+        return multi * currentItem;
+      });
+      return multi;
+    }
+    multiplyArray(arr); //6000
+
+    // reverseArray
+    function reverseArray(arr) {
+      var arr = arr.reverse();
+      return arr;
+    }
+    reverseArray(arr); //[30, 20, 10]
+
+    //error!
+    multiplyArray(rangeToArray(arr)) - will not work in console, cuz of function wrapper scope,
+    but working step by step
 
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
+    <button onclick="q21()">rangeToArray</button>
+    <button onclick="q22()">summarray</button>
+    <button onclick="q23()">multiplyArray</button>
+    <button onclick="q24()">reverseArray</button>
+    <script>
+      var arr = [10,20,30];
+      // rangeToArray
+      function q21(){
+        function rangeToArray(rangeStart, rangeStop, rangeStep){
+          var testArr = [];
+          if(rangeStart > rangeStop){
+            var x = rangeStop;
+            rangeStop = rangeStart;
+            rangeStart = x;
+          }
+          for(var i = rangeStart; i <= rangeStop; i += rangeStep){
+            testArr.push(i);
+          }
+          return testArr;
+        }
+        console.log(rangeToArray(1,5,1));
+      }
+
+      //sumArray
+      function q22(){
+        function sumArray(arr){
+          var sum = arr.reduce( function(sum, currentItem){
+            return sum + currentItem;
+          });
+          return sum;
+        }
+        console.log(sumArray(arr));
+      }
+
+      //multiplyArray
+      function q23(){
+        function multiplyArray(arr){
+          var multi = arr.reduce( function(multi, currentItem){
+            return multi * currentItem;
+          });
+          return multi;
+        }
+        console.log(multiplyArray(arr));
+      }
+
+      //reverseArray
+      function q24(){
+        function reverseArray(arr) {
+          var arr = arr.reverse();
+          return arr;
+        }
+        console.log(reverseArray(arr));
+      }
+    </script>
     <br>
 
     <h2>3. Реалізуйте синтаксичний аналізатор</h2>
@@ -77,7 +193,7 @@
 
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
+    <button onclick="q3()">show result</button>
     <br>
 
     <h2>4. no_Title:(</h2>
@@ -91,6 +207,12 @@
 
       Бонус: Напишіть як мінімум  2 способи реалізації функції deepEqual
     </p>
+    <pre>
+      <code>
+
+      </code>
+    </pre>
+    <button onclick="q4()">show result</button>
   <script>
     
   </script>
