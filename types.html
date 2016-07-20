@@ -25,20 +25,44 @@
 
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
+    <button onclick="q1()">variant1</button>
+    <button onclick="q11()">variant2</button>
     <script>
       function q1(){
-        var arr = ['1', 2, {}, '2']
+        var arr = ['text', 2, isNaN, 'text', true, undefined, NaN, false,, null, {}],
+            converted_arr = [],
+            output = {}; 
+
         function a(array){
 
-          var exit = [];
-          array.forEach(function(item, i, array){
-            exit.push(typeof(item));
+          array.forEach(function(item){
+            converted_arr.push(typeof(item));
           });
 
+          converted_arr.forEach(function(x) { output[x] = (output[x] || 0)+1; });
+
+          console.log( 'Enter array is: ' + arr );
+          console.log( 'Array types stat:' );
+          console.log( output );
+        }
+        a(arr);
+      }
+
+      function q11(){
+        var arr = [1, '1', true, undefined, null, isNaN];
 
 
-          console.log( exit  );
+        function a(array){
+          let b = {};
+          array.forEach(function(item){
+            // -> '1'
+            if( undefined === b[typeof(item)]){
+              b[typeof(item)] = 0;
+            }
+            b[typeof(item)] += 1; 
+          });
+
+          console.log( b );
         }
         a(arr);
       }
