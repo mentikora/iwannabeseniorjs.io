@@ -276,12 +276,42 @@
     </p>
     <pre>
       <code>
+    var a = {
+      name: 'Hello',
+      lastname: 'World',
+      age: 2000000
+    };
+    var b = {
+      name: 'Hello',
+      lastname: 'World',
+      age: 2000000
+    };
 
+    function deepEqual(a,b){
+      (JSON.stringify(a) == JSON.stringify(b)) ? console.log(true) : console.log(false);
+    }
+    deepEqual(a,b);
       </code>
     </pre>
     <button onclick="q4()">show result</button>
   <script>
-    
+    function q4(){
+      var a = {
+        name: 'Hello',
+        lastname: 'World',
+        age: 2000000
+      };
+      var b = {
+        name: 'Hello',
+        lastname: 'World',
+        age: 2000000
+      };
+
+      function deepEqual(a,b){
+        (JSON.stringify(a) == JSON.stringify(b)) ? console.log(true) : console.log(false);
+      }
+      deepEqual(a,b);
+    }
   </script>
   </section>
 </body>
