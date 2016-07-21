@@ -287,10 +287,10 @@
       age: 2000000
     };
 
-    function deepEqual(a,b){
-      (JSON.stringify(a) == JSON.stringify(b)) ? console.log(true) : console.log(false);
+    function superLazyDeepEqual(a,b){
+      (JSON.stringify(a) === JSON.stringify(b)) ? console.log(true) : console.log(false);
     }
-    deepEqual(a,b);
+    superLazyDeepEqual(a,b);
       </code>
     </pre>
     <button onclick="q4()">show result</button>
@@ -307,10 +307,10 @@
         age: 2000000
       };
 
-      function deepEqual(a,b){
-        (JSON.stringify(a) == JSON.stringify(b)) ? console.log(true) : console.log(false);
+      function superLazyDeepEqual(a,b){
+        (JSON.stringify(a) === JSON.stringify(b)) ? console.log(true) : console.log(false);
       }
-      deepEqual(a,b);
+      superLazyDeepEqual(a,b);
     }
   </script>
   </section>
