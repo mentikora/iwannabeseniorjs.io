@@ -22,10 +22,37 @@
     </p>
     <pre>
       <code>
-
+    var arr = ['text', 2, isNaN, 'text', true, undefined, NaN, false, {}];
+    function typeOfArray(array){
+      let obj = {};
+      array.forEach(function(item){
+        if( undefined === obj[typeof(item)]){
+          obj[typeof(item)] = 0;
+        }
+        obj[typeof(item)] += 1; 
+      });
+      console.log( obj );
+    }
+    typeOfArray(arr);
       </code>
     </pre>
     <button onclick="q1()">show result</button>
+    <script>
+      function q1(){
+        var arr = ['text', 2, isNaN, 'text', true, undefined, NaN, false, {}];
+        function typeOfArray(array){
+          let obj = {};
+          array.forEach(function(item){
+            if( undefined === obj[typeof(item)]){
+              obj[typeof(item)] = 0;
+            }
+            obj[typeof(item)] += 1; 
+          });
+          console.log( obj );
+        }
+        typeOfArray(arr);
+      }
+    </script>
     <br>
 
     <h2>2. Напишіть додаткові функції для роботи з масивами</h2>
@@ -45,10 +72,109 @@
     </p>
     <pre>
       <code>
+    var arr = [10,20,30];
+
+    // rangeToArray
+    function rangeToArray(rangeStart, rangeStop, rangeStep){
+      var testArr = [];
+      if(rangeStart > rangeStop){
+        var x = rangeStop;
+        rangeStop = rangeStart;
+        rangeStart = x;
+      }
+      for(var i = rangeStart; i <= rangeStop; i += rangeStep){
+        testArr.push(i);
+      }
+      return testArr;
+    }
+    rangeToArray(5,5,2); //[5]
+    rangeToArray(1,5,1); //[1, 2, 3, 4, 5]
+
+    //sumArray
+    function sumArray(arr){
+      var sum = arr.reduce( function(sum, currentItem){
+        return sum + currentItem;
+      });
+      return sum;
+    }
+    sumArray(arr); //60
+
+    //multiplyArray
+    function multiplyArray(arr){
+      var multi = arr.reduce( function(multi, currentItem){
+        return multi * currentItem;
+      });
+      return multi;
+    }
+    multiplyArray(arr); //6000
+
+    // reverseArray
+    function reverseArray(arr) {
+      var arr = arr.reverse();
+      return arr;
+    }
+    reverseArray(arr); //[30, 20, 10]
+
+    //error!
+    multiplyArray(rangeToArray(arr)) - will not work in console, cuz of function wrapper scope,
+    but working step by step
 
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
+    <button onclick="q21()">rangeToArray</button>
+    <button onclick="q22()">summarray</button>
+    <button onclick="q23()">multiplyArray</button>
+    <button onclick="q24()">reverseArray</button>
+    <script>
+      var arr = [10,20,30];
+      // rangeToArray
+      function q21(){
+        function rangeToArray(rangeStart, rangeStop, rangeStep){
+          var testArr = [];
+          if(rangeStart > rangeStop){
+            var x = rangeStop;
+            rangeStop = rangeStart;
+            rangeStart = x;
+          }
+          for(var i = rangeStart; i <= rangeStop; i += rangeStep){
+            testArr.push(i);
+          }
+          return testArr;
+        }
+        console.log(rangeToArray(1,5,1));
+      }
+
+      //sumArray
+      function q22(){
+        function sumArray(arr){
+          var sum = arr.reduce( function(sum, currentItem){
+            return sum + currentItem;
+          });
+          return sum;
+        }
+        console.log(sumArray(arr));
+      }
+
+      //multiplyArray
+      function q23(){
+        function multiplyArray(arr){
+          var multi = arr.reduce( function(multi, currentItem){
+            return multi * currentItem;
+          });
+          return multi;
+        }
+        console.log(multiplyArray(arr));
+      }
+
+      //reverseArray
+      function q24(){
+        function reverseArray(arr) {
+          var arr = arr.reverse();
+          return arr;
+        }
+        console.log(reverseArray(arr));
+      }
+    </script>
     <br>
 
     <h2>3. Реалізуйте синтаксичний аналізатор</h2>
@@ -56,7 +182,7 @@
       1) Спочатку, використовуючи prompt(), програма просить користувача ввести текст. Довжина тексту повинна бути від 1 до 140 символів
       В разі помилки, ми просимо користувача ввести текс з допустимою кількістю символів. 
       <br><br>
-      2) Наш аналізатор повинен проаналізувати ввеедений користувачем текс на пердмет дублювання розділових знаків та знаків пунктувацї*.
+      2) Наш аналізатор повинен проаналізувати введений користувачем текст на предмет дублювання розділових знаків та знаків пунктуацї*.
       Якщо ми знайшли  у тексті повторення - дублювання автоматично замінює подвоєння на один знак. 
       <br><br>
       3) Після корекції подвоєнь, ми ще раз проходимо по тексту, та підраховуємо відсоткову кількість розділових знаків та знаків пунктуації відносно довжини тексту
@@ -74,11 +200,68 @@
     </p>
     <pre>
       <code>
+    var userText = prompt('Enter text');
+    var punctuations = [',', '.', '!', '?', '-', ':', ';'];
 
+    function checkText(msg){
+      if(msg.length < 1 || msg.length > 140){ 
+        userText = prompt('Min text length = 1, max text length = 140, enter text again');
+        return checkText(userText);
+      }
+      return msg;
+    }
+    checkText(userText);
+
+
+    var counter = 0;
+    var editedText = userText[0];
+
+    for(var i = 1; i < userText.length; i++){
+      if ( !((punctuations.indexOf(userText[i])) >= 0 && (punctuations.indexOf(userText[i+1])) >= 0) ) {
+        editedText += userText[i];
+      } 
+      if(punctuations.indexOf(userText[i]) >= 0) {
+        counter += 1;
+      }
+    }
+    counter = (counter * 100 / userText.length).toFixed(2);
+    console.log("'Hey, here's Your original message:'", userText);
+    console.log("'We've found some mistakes, so corrected them for You:'", editedText, 'and', counter,'% of the text are punctuation marks!');
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
+    <button onclick="q3()">show result</button>
     <br>
+    <script>
+      function q3(){
+        var userText = prompt('Enter text');
+        var punctuations = [',', '.', '!', '?', '-', ':', ';'];
+
+        function checkText(msg){
+          if(msg.length < 1 || msg.length > 140){ 
+            userText = prompt('Min text length = 1, max text length = 140, enter text again');
+            return checkText(userText);
+          }
+          return msg;
+        }
+        checkText(userText);
+
+
+        var counter = 0;
+        var editedText = userText[0];
+
+        for(var i = 1; i < userText.length; i++){
+          if ( !((punctuations.indexOf(userText[i])) >= 0 && (punctuations.indexOf(userText[i+1])) >= 0) ) {
+            editedText += userText[i];
+          } 
+          if(punctuations.indexOf(userText[i]) >= 0) {
+            counter += 1;
+          }
+        }
+        counter = (counter * 100 / userText.length).toFixed(2);
+        console.log("'Hey, here's Your original message:'", userText);
+        console.log("'We've found some mistakes, so corrected them for You:'", editedText, 'and', counter,'% of the text are punctuation marks!');
+      }
+    </script>
 
     <h2>4. no_Title:(</h2>
     <p class="text_style">
@@ -91,8 +274,44 @@
 
       Бонус: Напишіть як мінімум  2 способи реалізації функції deepEqual
     </p>
+    <pre>
+      <code>
+    var a = {
+      name: 'Hello',
+      lastname: 'World',
+      age: 2000000
+    };
+    var b = {
+      name: 'Hello',
+      lastname: 'World',
+      age: 2000000
+    };
+
+    function superLazyDeepEqual(a,b){
+      (JSON.stringify(a) === JSON.stringify(b)) ? console.log(true) : console.log(false);
+    }
+    superLazyDeepEqual(a,b);
+      </code>
+    </pre>
+    <button onclick="q4()">show result</button>
   <script>
-    
+    function q4(){
+      var a = {
+        name: 'Hello',
+        lastname: 'World',
+        age: 2000000
+      };
+      var b = {
+        name: 'Hello',
+        lastname: 'World',
+        age: 2000000
+      };
+
+      function superLazyDeepEqual(a,b){
+        (JSON.stringify(a) === JSON.stringify(b)) ? console.log(true) : console.log(false);
+      }
+      superLazyDeepEqual(a,b);
+    }
   </script>
   </section>
 </body>
