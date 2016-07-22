@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>iwannabeseniorjs.io</title>
   <link rel="stylesheet" type="text/css" href="css/application.css">
+  <link rel="stylesheet" type="text/css" href="css/dom_lesson.css">
 </head>
 <body>
   <section class="section_content">
@@ -16,18 +17,49 @@
 
     <h2>Гра для тренування пам'яті</h2>
     <p class="text_style">
-      
+      У таблиці позміром 4 на 4 розмістіть 8 випадкових малюнків, по 2 кожного <br>
+      Простий приклад розмітки можна знайти тут: https://jsfiddle.net/wvLnd55c/3/. Малюнки можна обирати на свій власнний розсуд. <br>
+      Тут знаходиться приклад простого геймплею - http://dkmgames.com/memory/pairsrun.php <br>
+      1) Спочатку всі малюнки розміщуються випадковим чином  у таблиці <br>
+      2) На самому початку всі карти показуються одночасно на дуже короткий час. Після цього приховуються <br>
+      4) При кліку на комірку таблиці, ми показуємо малюнок, який там знаходиться. <br>
+      5) Після цього користувач повинен вибрати наступну комірку <br>
+      6) Якщо малюнки співпадають, вони залишаються видимі до кінця гри. <br>
+      7) Якщо малюнки не співпадають - вони приховуються. <br>
+      8) Гра закінчується, коли користувач відкри всі карти. <br> 
+      9) Сума очок користувача = сумі кліків які він зробив протягом гри для того щоб показати приховані картки. <br>
+      10) Під час гри користувач бачить свій поточний рахунок, та рекорд за поточну ігрову сесію (поки сторінку не перезавантажено) <br>
+      11) "Start New Game" Перезапускає гру <br>
+      12) Бонус: Додайте можливість генерувати ігрове поле різного розміру (від 4x4 до 16x16) <br>
     </p>
     <pre>
       <code>
    
       </code>
     </pre>
-    <button onclick="q1()">show result</button>
   <script>
   
   
   </script>
+  <div id="game_menu">
+    <input type="text" placeholder="Enter field size, one number (from 4 to 16): ">
+    <p></p>
+    <button>start new game</button>
+    <p>
+      Total points: 
+      <span>0</span>
+    </p>
+  </div>
+  <div id="memory_game">
+    <!-- <div class="out">1</div>
+    <div class="active">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div> -->
+  </div>
   </section>
 </body>
 </html>
