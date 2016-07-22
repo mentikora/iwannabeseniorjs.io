@@ -5,6 +5,7 @@
   <title>iwannabeseniorjs.io</title>
   <link rel="stylesheet" type="text/css" href="css/application.css">
   <link rel="stylesheet" type="text/css" href="css/dom_lesson.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
   <section class="section_content">
@@ -38,11 +39,41 @@
       </code>
     </pre>
   <script>
-  
-  
+    $(document).ready(function(){
+      var userNumber = 4;
+      var fieldSize = userNumber * userNumber;
+      var emptyArr = [];
+      for(var i = 0; i < fieldSize / 2; i++){
+        emptyArr.push(i)
+      };
+      var clone = emptyArr.slice(0); 
+      var cardsData = emptyArr.concat(clone);
+      
+      function shuffle(o){
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+      }
+      shuffle(cardsData);
+
+      for(var i = 0; i < fieldSize; i++){
+        $('#memory_game').append('<div>'+cardsData.pop()+'</div>');
+      }
+
+      var card = $("#memory_game div");
+      card.css({width: 100 / userNumber - 2 + '%'});
+
+      var cardWidth = card.width();
+      card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
+      
+      card.on('click', function(){
+        $(this).addClass('active');
+      });
+
+    });
+
   </script>
   <div id="game_menu">
-    <input type="text" placeholder="Enter field size, one number (from 4 to 16): ">
+    <input type="text" id="fieldSize" placeholder="Enter field size, one number (from 4 to 16): ">
     <p></p>
     <button>start new game</button>
     <p>

@@ -32,7 +32,8 @@
 
 /* game */
 #memory_game{
-	margin-top: 25px;
+	width: 70%;
+	margin: 25px auto 0;
 
 	display: -webkit-box;
   display: -moz-box;
@@ -44,28 +45,31 @@
   justify-content: space-around;
 }
 #memory_game div{
-	width: 20%;
-	margin: 2%;
-	height: 100px;
-
-	line-height: 100px;
 	text-align: center;
 	cursor: pointer;
+	color: #000;
+	text-indent: -9999px;
 
-	background: #eab92d;
-	background: -moz-linear-gradient(top,  #eab92d 0%, #c79810 100%);
-	background: -webkit-linear-gradient(top,  #eab92d 0%,#c79810 100%);
-	background: linear-gradient(to bottom,  #eab92d 0%,#c79810 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eab92d', endColorstr='#c79810',GradientType=0 );
+	background: #ffffff;
+	background: -moz-linear-gradient(-45deg,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(-45deg,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	background: linear-gradient(135deg,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 );
+
+	border-radius: 5px;
+	margin: 1%;
+
 
 	transition: all .25s ease-in-out;
 }
 	#memory_game div:not(.out):hover,
 	#memory_game div.active {
-		box-shadow: 0px 0px 10px 0px rgba(255,255,255, .25);
-		transform: scale(1.05);
+		box-shadow: inset 0px 0px 10px 0px rgba(0,0,0, 1);
 	}
 	#memory_game div.active{
+		text-indent: 0;
+		font-weight: 900;
+
 		background: #febf01;
 		background: -moz-linear-gradient(top,  #febf01 0%, #febf01 100%);
 		background: -webkit-linear-gradient(top,  #febf01 0%,#febf01 100%);
