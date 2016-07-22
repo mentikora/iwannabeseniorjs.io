@@ -103,6 +103,7 @@ h1,h2,h3{
 a{
   color: #FF9800;
   text-decoration: none;
+  word-break: break-all;
 }
 
 /* divider */
