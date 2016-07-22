@@ -200,6 +200,30 @@ img.screenshot{
       -webkit-background-size: cover; 
       background-size: cover; 
     }
+    .lessons_navigation a.dom{
+      background: #000 url('images/dom.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.jquery{
+      background: #000 url('images/jquery.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.inheritance{
+      background: #000 url('images/inheritance.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.ajax{
+      background: #000 url('images/ajax.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
 
 button{
   color: #fff;
