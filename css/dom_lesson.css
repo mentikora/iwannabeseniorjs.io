@@ -7,6 +7,12 @@
 	background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
 }
+.center{
+	text-align: center;
+	color: red;
+	font-weight: 900;
+	text-transform: uppercase;
+}
 .error{
 	font-size: 12px;
 	color: red;
@@ -50,7 +56,7 @@
 
 /* game */
 #memory_game{
-	width: 70%;
+	width: 80%;
 	margin: 25px auto 0;
 
 	display: -webkit-box;
@@ -61,6 +67,10 @@
   
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
+
+  background: url('images/dog.jpg') no-repeat 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 #memory_game div{
 	text-align: center;
@@ -97,15 +107,16 @@
 	}
 
 	#memory_game div.out{
-		color: #fff;
+		color: #000;
 		font-weight: 900;
 		cursor: default;
 		text-indent: 0;
 
-		background: #606c88;
+		/*background: #606c88;
 		background: -moz-radial-gradient(center, ellipse cover,  #606c88 0%, #3f4c6b 100%);
 		background: -webkit-radial-gradient(center, ellipse cover,  #606c88 0%,#3f4c6b 100%);
 		background: radial-gradient(ellipse at center,  #606c88 0%,#3f4c6b 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );*/
+		background: rgba(255,255,255, .5);
 
 	}

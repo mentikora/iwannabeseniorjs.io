@@ -41,7 +41,6 @@
   <script>
     $(document).ready(function(){
 
-      
       $("#start_game").on('click', function(e){
         e.preventDefault(); 
         var userNumber = $("#fieldSize").val() * 1;
@@ -75,7 +74,7 @@
         shuffle(cardsData);
 
         for(var a=0; a < fieldSize; a++){
-          $('#memory_game').append('<div class="out">' + cardsData.pop() + '</div>');
+          $('#memory_game').append('<div class="active">' + cardsData.pop() + '</div>');
         }
 
         var card = $("#memory_game div");
@@ -84,8 +83,8 @@
         card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
 
         setTimeout(function(){
-          card.removeClass('out');
-        }, 3000);
+          card.removeClass('active');
+        }, 5000);
         
         card.on('click', function(){
           if ( this.className != 'active' && this.className != 'out' ) {
@@ -122,7 +121,9 @@
 
         var win = function () {
           if(winCounter === fieldSize/2) {
-            alert("Great!");
+            setTimeout(function(){
+              card.fadeOut(300);
+            });
           } 
         }
       }
@@ -131,6 +132,12 @@
 
   </script>
   <div class="thegame">
+    <div class="center">
+      <p>
+        before running call exorcist or even two,
+        <br>
+        you have been warned!</p>
+    </div>
     <div class="game_menu">
       <input type="text" id="fieldSize" placeholder="Enter field size, one number (from 4 to 16): ">
       <p class="error">Sorry, wrong number, try again</p>
