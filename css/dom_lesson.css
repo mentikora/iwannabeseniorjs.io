@@ -64,7 +64,7 @@
 }
 	#memory_game div:not(.out):hover,
 	#memory_game div.active {
-		box-shadow: inset 0px 0px 10px 0px rgba(0,0,0, 1);
+		box-shadow: inset 0px 0px 15px 0px rgba(0,0,0, 1);
 	}
 	#memory_game div.active{
 		text-indent: 0;
@@ -78,13 +78,15 @@
 	}
 
 	#memory_game div.out{
-		color: #008A00;
+		color: #fff;
 		font-weight: 900;
 		cursor: default;
+		text-indent: 0;
 
-		background: #fcfff4;
-		background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-		background: -webkit-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
-		background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+		background: #606c88;
+		background: -moz-radial-gradient(center, ellipse cover,  #606c88 0%, #3f4c6b 100%);
+		background: -webkit-radial-gradient(center, ellipse cover,  #606c88 0%,#3f4c6b 100%);
+		background: radial-gradient(ellipse at center,  #606c88 0%,#3f4c6b 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );
+
 	}

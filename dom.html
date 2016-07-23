@@ -42,7 +42,10 @@
     $(document).ready(function(){
       var userNumber = 4;
       var fieldSize = userNumber * userNumber;
+      var clickCounter = 1;
       var emptyArr = [];
+      var checkClicks = [];
+
       for(var i = 0; i < fieldSize / 2; i++){
         emptyArr.push(i)
       };
@@ -56,18 +59,41 @@
       shuffle(cardsData);
 
       for(var i = 0; i < fieldSize; i++){
-        $('#memory_game').append('<div>'+cardsData.pop()+'</div>');
+        $('#memory_game').append('<div>' + cardsData.pop() + '</div>');
       }
 
       var card = $("#memory_game div");
       card.css({width: 100 / userNumber - 2 + '%'});
-
       var cardWidth = card.width();
       card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
       
       card.on('click', function(){
-        $(this).addClass('active');
+        if ( this.className != 'active' && this.className != 'out' ) {
+          $(this).addClass('active');
+          checkClicks.push( $(this).html() );
+          // console.log(checkClicks);
+        }
+
+        if (checkClicks.length > 1) {
+          if (checkClicks[0] === checkClicks[1]) {
+            check("out");
+            $('.total_points').html(clickCounter++);
+            checkClicks = [];
+          } else {
+            check("");
+            checkClicks = [];
+          }
+        }
       });
+
+      var check = function(className) {
+        var x = $(".active");
+        setTimeout(function() {
+          for(var i = (x.length - 1); i >= 0; i--) {
+            x[i].className = className;
+          }
+        }, 500);
+      }
 
     });
 
@@ -78,7 +104,7 @@
     <button>start new game</button>
     <p>
       Total points: 
-      <span>0</span>
+      <span class="total_points"></span>
     </p>
   </div>
   <div id="memory_game">
