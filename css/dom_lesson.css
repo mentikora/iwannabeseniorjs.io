@@ -53,7 +53,6 @@
 	border-color: #ffac32
 }
 
-
 /* game */
 #memory_game{
 	width: 80%;
@@ -88,7 +87,6 @@
 	border-radius: 5px;
 	margin: 1%;
 
-
 	transition: all .25s ease-in-out;
 }
 	#memory_game div:not(.out):hover,
@@ -112,11 +110,5 @@
 		cursor: default;
 		text-indent: 0;
 
-		/*background: #606c88;
-		background: -moz-radial-gradient(center, ellipse cover,  #606c88 0%, #3f4c6b 100%);
-		background: -webkit-radial-gradient(center, ellipse cover,  #606c88 0%,#3f4c6b 100%);
-		background: radial-gradient(ellipse at center,  #606c88 0%,#3f4c6b 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );*/
-		background: rgba(255,255,255, .5);
-
+		background: rgba(255,255,255, .3);
 	}

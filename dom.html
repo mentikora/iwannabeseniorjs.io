@@ -121,9 +121,7 @@
 
         var win = function () {
           if(winCounter === fieldSize/2) {
-            setTimeout(function(){
-              card.fadeOut(300);
-            });
+            card.css({opacity: 0});
           } 
         }
       }
