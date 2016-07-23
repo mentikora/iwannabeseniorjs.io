@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>iwannabeseniorjs.io</title>
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+  <link rel="stylesheet" type="text/css" href="css/dom_lesson.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+  <section class="section_content">
+    <a href="index.html">&larr; back</a>
+    <h1>jQuery</h1>
+    <p class="text_style">
+      Homework info: <a href="https://docs.google.com/document/d/1isEgwDIzNTs3FVImjGtL2324naYySSbodlWMn3HCExU/edit" target="_blank">https://docs.google.com/document/d/1isEgwDIzNTs3FVImjGtL2324naYySSbodlWMn3HCExU/edit</a>
+    </p>
+    <div class="divider"></div>
+
+    <h2>Плагін</h2>
+    <p class="text_style">
+      Write a jQuery plugin - trunc. 
+      Plugin truncates text and adds &hellip; to the end if text has too many characters limited by consumer of plugin inputted value.
+      Click on ‘...’ should allow you to see the whole text.
+      In this task, pay additional attention to the quality of your code and documentation notes.
+    </p>
+    <pre>
+      <code>
+    (function($) {
+      $.fn.trunc = function(lim, cropBtn, style={}){
+        var el = this;
+        var elText = el.text();
+        if (elText.length < lim){
+          return this;
+        }
+
+        var cropBtn = $('&lt;span&gt;').html(cropBtn).css(style);
+        var crop = elText.substr(0, lim);
+        this.text(crop).append(cropBtn);
+        
+        cropBtn.on('click', function(){
+          el.text(elText);
+          this.remove();
+        });
+
+        return this;
+      }
+    })(jQuery);
+
+    $(document).ready(function(){
+      var testText = $('.test');
+      $('.test').trunc(100, 'readmore', {background:'#ccc', color: '#000', padding: '0 5px', marginLeft: '10px', cursor: 'pointer'});
+    });
+      </code>
+    </pre>
+  <script>
+    (function($) {
+      $.fn.trunc = function(lim, cropBtn, style={}){
+        var el = this;
+        var elText = el.text();
+        if (elText.length < lim){
+          return this;
+        }
+
+        var cropBtn = $('<span>').html(cropBtn).css(style);
+        var crop = elText.substr(0, lim);
+        this.text(crop).append(cropBtn);
+        
+        cropBtn.on('click', function(){
+          el.text(elText);
+          this.remove();
+        });
+
+        return this;
+      }
+    })(jQuery);
+
+    $(document).ready(function(){
+      var testText = $('.test');
+      $('.test').trunc(100, 'readmore', {background:'#ccc', color: '#000', padding: '0 5px', marginLeft: '10px', cursor: 'pointer'});
+    });
+  </script>
+
+  <h3>How it works:</h3>
+  <p class="text_style">
+    <b>trunk(lim, cropBtn, style={})</b> приймає <i>3</i> аргументи, які можна контролювати:
+  </p>
+  <ol class="text_style">
+    <li>
+      <b>lim</b>, обов'язковий параметр, приймає Number
+      <br>
+      - вказує, з якої літери обрізати текст - <i>(from lim to text.length)</i>
+    </li>
+    <li>
+      <b>cropBtn</b>, обов'язковий параметр, приймає String
+      <br>
+      - контент, який буде виводитись на кнопці, при кліку на яку - показується весь текст
+    </li>
+    <li>
+      <b>style={}</b>, необов'язковий параметр, приймає obj
+      <br>
+      стиль кнопки cropBtn
+    </li>
+  </ol>
+  <h3>Example:</h3>
+  <p class="text_style">
+    $('.test').trunc(100, 'readmore', {background:'#ccc', color: '#000', padding: '0 5px', marginLeft: '10px', cursor: 'pointer'});
+  </p>
+  <p class="test text_style">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum excepturi totam ullam, ex a sunt aliquam fugit veniam cumque distinctio consectetur nulla aperiam veritatis harum nisi ea nostrum vero. Nisi!</p>
+
+  </section>
+</body>
+</html>
