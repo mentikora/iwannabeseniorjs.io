@@ -40,82 +40,108 @@
     </pre>
   <script>
     $(document).ready(function(){
-      var userNumber = 4;
-      var fieldSize = userNumber * userNumber;
-      var clickCounter = 1;
-      var emptyArr = [];
-      var checkClicks = [];
 
-      for(var i = 0; i < fieldSize / 2; i++){
-        emptyArr.push(i)
-      };
-      var clone = emptyArr.slice(0); 
-      var cardsData = emptyArr.concat(clone);
       
-      function shuffle(o){
-        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-        return o;
-      }
-      shuffle(cardsData);
-
-      for(var i = 0; i < fieldSize; i++){
-        $('#memory_game').append('<div>' + cardsData.pop() + '</div>');
-      }
-
-      var card = $("#memory_game div");
-      card.css({width: 100 / userNumber - 2 + '%'});
-      var cardWidth = card.width();
-      card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
-      
-      card.on('click', function(){
-        if ( this.className != 'active' && this.className != 'out' ) {
-          $(this).addClass('active');
-          checkClicks.push( $(this).html() );
-          // console.log(checkClicks);
-        }
-
-        if (checkClicks.length > 1) {
-          if (checkClicks[0] === checkClicks[1]) {
-            check("out");
-            $('.total_points').html(clickCounter++);
-            checkClicks = [];
-          } else {
-            check("");
-            checkClicks = [];
-          }
+      $("#start_game").on('click', function(e){
+        e.preventDefault(); 
+        var userNumber = $("#fieldSize").val() * 1;
+        if (userNumber < 4 || userNumber > 16) {
+          $('p.error').css({visibility: 'visible'});  
+        } else{
+          $('p.error').css({visibility: 'hidden'});  
+          greatestGameEverMade(userNumber);
         }
       });
 
-      var check = function(className) {
-        var x = $(".active");
-        setTimeout(function() {
-          for(var i = (x.length - 1); i >= 0; i--) {
-            x[i].className = className;
+      function greatestGameEverMade(userNumber){
+        $("#memory_game div").remove();
+        var fieldSize = userNumber * userNumber;
+        var clickCounter = 0;
+        var winClickCounter = 0;
+        var winCounter = 0;
+        var emptyArr = [];
+        var checkClicks = [];
+
+        for(var i=0; i < fieldSize / 2; i++){
+          emptyArr.push(i);
+        }
+        var clone = emptyArr.slice(0); 
+        var cardsData = emptyArr.concat(clone);
+        
+        function shuffle(o){
+          for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+          return o;
+        }
+        shuffle(cardsData);
+
+        for(var a=0; a < fieldSize; a++){
+          $('#memory_game').append('<div class="out">' + cardsData.pop() + '</div>');
+        }
+
+        var card = $("#memory_game div");
+        card.css({width: 100 / userNumber - 2 + '%'});
+        var cardWidth = card.width();
+        card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
+
+        setTimeout(function(){
+          card.removeClass('out');
+        }, 3000);
+        
+        card.on('click', function(){
+          if ( this.className != 'active' && this.className != 'out' ) {
+            $(this).addClass('active');
+            checkClicks.push( $(this).html() );
+            clickCounter++;
           }
-        }, 500);
+
+          if (checkClicks.length > 1) {
+            if (checkClicks[0] === checkClicks[1]) {
+              check("out");
+              winCounter++;
+              winClickCounter+=2;
+              win();
+              checkClicks = [];
+            } else {
+              check("");
+              checkClicks = [];
+            }
+          }
+          var score = winClickCounter/clickCounter;
+          console.log(winClickCounter,clickCounter);
+          $('.total_points').html(score.toFixed(2));
+        });
+
+        var check = function(className) {
+          var x = $(".active");
+          setTimeout(function() {
+            for(var i = (x.length - 1); i >= 0; i--) {
+              x[i].className = className;
+            }
+          }, 500);
+        }
+
+        var win = function () {
+          if(winCounter === fieldSize/2) {
+            alert("Great!");
+          } 
+        }
       }
 
     });
 
   </script>
-  <div id="game_menu">
-    <input type="text" id="fieldSize" placeholder="Enter field size, one number (from 4 to 16): ">
-    <p></p>
-    <button>start new game</button>
-    <p>
-      Total points: 
-      <span class="total_points"></span>
-    </p>
-  </div>
-  <div id="memory_game">
-    <!-- <div class="out">1</div>
-    <div class="active">2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div> -->
+  <div class="thegame">
+    <div class="game_menu">
+      <input type="text" id="fieldSize" placeholder="Enter field size, one number (from 4 to 16): ">
+      <p class="error">Sorry, wrong number, try again</p>
+      <button id="start_game">start new game</button>
+      <p>
+        Total points: 
+        <span class="total_points"></span>
+      </p>
+    </div>
+    <div id="memory_game">
+    </div>
   </div>
   </section>
 </body>
