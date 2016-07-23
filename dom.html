@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>iwannabeseniorjs.io</title>
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+  <link rel="stylesheet" type="text/css" href="css/dom_lesson.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+  <section class="section_content">
+    <a href="index.html">&larr; back</a>
+    <h1>BOM & DOM</h1>
+    <p class="text_style">
+      Homework info: <a href="https://gist.github.com/kurjoz/f8484ccc8287fe425e54331b054e4187" target="_blank">https://gist.github.com/kurjoz/f8484ccc8287fe425e54331b054e4187</a>
+    </p>
+    <div class="divider"></div>
+
+    <h2>Гра для тренування пам'яті</h2>
+    <p class="text_style">
+      У таблиці позміром 4 на 4 розмістіть 8 випадкових малюнків, по 2 кожного <br>
+      Простий приклад розмітки можна знайти тут: https://jsfiddle.net/wvLnd55c/3/. Малюнки можна обирати на свій власнний розсуд. <br>
+      Тут знаходиться приклад простого геймплею - http://dkmgames.com/memory/pairsrun.php <br>
+      1) Спочатку всі малюнки розміщуються випадковим чином  у таблиці <br>
+      2) На самому початку всі карти показуються одночасно на дуже короткий час. Після цього приховуються <br>
+      4) При кліку на комірку таблиці, ми показуємо малюнок, який там знаходиться. <br>
+      5) Після цього користувач повинен вибрати наступну комірку <br>
+      6) Якщо малюнки співпадають, вони залишаються видимі до кінця гри. <br>
+      7) Якщо малюнки не співпадають - вони приховуються. <br>
+      8) Гра закінчується, коли користувач відкри всі карти. <br> 
+      9) Сума очок користувача = сумі кліків які він зробив протягом гри для того щоб показати приховані картки. <br>
+      10) Під час гри користувач бачить свій поточний рахунок, та рекорд за поточну ігрову сесію (поки сторінку не перезавантажено) <br>
+      11) "Start New Game" Перезапускає гру <br>
+      12) Бонус: Додайте можливість генерувати ігрове поле різного розміру (від 4x4 до 16x16) <br>
+    </p>
+    <pre>
+      <code>
+   
+      </code>
+    </pre>
+  <script>
+    $(document).ready(function(){
+
+      $("#start_game").on('click', function(e){
+        e.preventDefault(); 
+        var userNumber = $("#fieldSize").val() * 1;
+        if (userNumber < 4 || userNumber > 16) {
+          $('p.error').css({visibility: 'visible'});  
+        } else{
+          $('p.error').css({visibility: 'hidden'});  
+          greatestGameEverMade(userNumber);
+        }
+      });
+
+      function greatestGameEverMade(userNumber){
+        $("#memory_game div").remove();
+        var fieldSize = userNumber * userNumber;
+        var clickCounter = 0;
+        var winClickCounter = 0;
+        var winCounter = 0;
+        var emptyArr = [];
+        var checkClicks = [];
+
+        for(var i=0; i < fieldSize / 2; i++){
+          emptyArr.push(i);
+        }
+        var clone = emptyArr.slice(0); 
+        var cardsData = emptyArr.concat(clone);
+        
+        function shuffle(o){
+          for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+          return o;
+        }
+        shuffle(cardsData);
+
+        for(var a=0; a < fieldSize; a++){
+          $('#memory_game').append('<div class="active">' + cardsData.pop() + '</div>');
+        }
+
+        var card = $("#memory_game div");
+        card.css({width: 100 / userNumber - 2 + '%'});
+        var cardWidth = card.width();
+        card.css({height: cardWidth, lineHeight: cardWidth + 'px'});
+
+        setTimeout(function(){
+          card.removeClass('active');
+        }, 5000);
+        
+        card.on('click', function(){
+          if ( this.className != 'active' && this.className != 'out' ) {
+            $(this).addClass('active');
+            checkClicks.push( $(this).html() );
+            clickCounter++;
+          }
+
+          if (checkClicks.length > 1) {
+            if (checkClicks[0] === checkClicks[1]) {
+              check("out");
+              winCounter++;
+              winClickCounter+=2;
+              win();
+              checkClicks = [];
+            } else {
+              check("");
+              checkClicks = [];
+            }
+          }
+          var score = winClickCounter/clickCounter;
+          console.log(winClickCounter,clickCounter);
+          $('.total_points').html(score.toFixed(2));
+        });
+
+        var check = function(className) {
+          var x = $(".active");
+          setTimeout(function() {
+            for(var i = (x.length - 1); i >= 0; i--) {
+              x[i].className = className;
+            }
+          }, 500);
+        }
+
+        var win = function () {
+          if(winCounter === fieldSize/2) {
+            card.css({opacity: 0});
+          } 
+        }
+      }
+
+    });
+
+  </script>
+  <div class="thegame">
+    <div class="center">
+      <p>
+        before running call exorcist or even two,
+        <br>
+        you have been warned!</p>
+    </div>
+    <div class="game_menu">
+      <input type="text" id="fieldSize" placeholder="Enter field size, one number (from 4 to 16): ">
+      <p class="error">Sorry, wrong number, try again</p>
+      <button id="start_game">start new game</button>
+      <p>
+        Total points: 
+        <span class="total_points"></span>
+      </p>
+    </div>
+    <div id="memory_game">
+    </div>
+  </div>
+  </section>
+</body>
+</html>

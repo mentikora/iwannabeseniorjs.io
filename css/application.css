@@ -103,6 +103,7 @@ h1,h2,h3{
 a{
   color: #FF9800;
   text-decoration: none;
+  word-break: break-all;
 }
 
 /* divider */
@@ -196,6 +197,30 @@ img.screenshot{
     }
     .lessons_navigation a.types{
       background: #000 url('images/types.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.dom{
+      background: #000 url('images/dom.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.jquery{
+      background: #000 url('images/jquery.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.inheritance{
+      background: #000 url('images/inheritance.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
+    .lessons_navigation a.ajax{
+      background: #000 url('images/ajax.jpg') 50%;
       
       -webkit-background-size: cover; 
       background-size: cover; 
