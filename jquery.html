@@ -57,7 +57,7 @@
       $.fn.trunc = function(lim, cropBtn, style={}){
         var el = this;
         var elText = el.text();
-        if (elText.length < lim){
+        if ( (lim <= 0 ) || (elText.length < lim) ){
           return this;
         }
 
@@ -88,7 +88,7 @@
     <li>
       <b>lim</b>, обов'язковий параметр, приймає Number
       <br>
-      - вказує, з якої літери обрізати текст - <i>(from lim to text.length)</i>
+      - вказує, з якої літери обрізати текст - <i>(from 0 to lim)</i>
     </li>
     <li>
       <b>cropBtn</b>, обов'язковий параметр, приймає String
