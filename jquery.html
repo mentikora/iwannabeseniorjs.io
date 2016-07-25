@@ -57,7 +57,7 @@
       $.fn.trunc = function(lim, cropBtn, style={}){
         var el = this;
         var elText = el.text();
-        if (elText.length < lim){
+        if ( (lim <= 0 ) || (elText.length < lim) ){
           return this;
         }
 
