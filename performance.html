@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta content="initial-scale=1, width=device-width" name="viewport">
   <title>iwannabeseniorjs.io</title>
   <link rel="stylesheet" type="text/css" href="css/application.css">
 </head>
 <body>
 	<section class="section_content">
 		<a href="index.html">&larr; back</a>
-		<h1>Web Performance Optimization Homework</h1>
+		<h1>Web Performance and Optimization</h1>
 		<p class="text_style">
 			Homework info: <a href="https://gist.github.com/itspoma/96795f40756519006a6e" target="_blank">https://gist.github.com/itspoma/96795f40756519006a6e</a>
 		</p>
@@ -16,6 +17,11 @@
 
 		<h2>1.Analyze http://google.com/ by Google Developer Tools</h2>
 		<div class="text_style">
+			Використовується архівування файлів за допомогою gzip (content-encoding:gzip)
+			<br>
+			Зменшений css, js
+			<br>
+			Більшість основних картинок передано у base64 + спрайти
 		</div>
 
 		<h2>2.Analyze http://github.com/ using YSlow, PageSpeed and webpagetest</h2>
@@ -24,6 +30,17 @@
 			<img src="img/performance/q2_pagespeed.jpg" alt="" class="img-responsive">
 			webpagetest
 			<img src="img/performance/q2_webpagetest.jpg" alt="" class="img-responsive">
+			<br>
+			<br>
+			YSlow відмовився обробляти сторінку github з alert: For security reason, framing is not allowed :/
+			Попробував на інших сайтах - pageSpeed і webpagetest більш симпатичніші.
+			<br>
+			<br>
+			Що до github, то pageSpeed і webpagetest сваряться на деякі неоптимізовані картинки, а сам pageSpeed - на підключення css в head, всі остальні рекомендаційні правила виконані повністю.
+			<br>
+			До цього часу не був знайомий з webpagetest, але дуже сподобалась його статистика по повторному запиту до сайту.
+			<br>
+			В майбутньому планую використовувати PageSpeed + webpagetest
 		</div>
 
 		<h2>3.Implement a non-optimized web page (single-file) with as much possible bugs (slow queries, fake ajax request, wrong image links, etc)</h2>
