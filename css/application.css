@@ -99,6 +99,12 @@ h1,h2,h3{
   display: inline-block;
 }
 
+.img-responsive{
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* link's */
 a{
   color: #FF9800;
