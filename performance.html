@@ -1,105 +1,291 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta content="initial-scale=1, width=device-width" name="viewport">
+  <meta charset="utf-8">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
   <title>iwannabeseniorjs.io</title>
   <style>
-  	button,h1,h2,h3{text-transform:uppercase}body,html{width:100%;min-height:100%;padding:0;margin:0;font-family:'Open Sans',sans-serif}body{background:url(images/body_bg.jpg) 50% 0 no-repeat fixed #000;-webkit-background-size:cover;background-size:cover;color:#fff;padding:40px 0;font-weight:400}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{height:1%}.img-responsive,.student_info img{height:auto;max-width:100%}.clearfix{display:block}.comment,.img-responsive,.student_info img,img.screenshot{display:inline-block}.section_content{width:70%;margin:0 auto;padding:40px 25px;background-color:#131313;box-shadow:0 16px 20px 6px #000;-moz-box-shadow:0 16px 20px 6px #000;-webkit-box-shadow:0 16px 20px 6px #000}@media(max-width:991px){.section_content{width:80%!important}.lessons_navigation a{width:25%!important}}@media(max-width:768px){.section_content{width:90%!important}.lessons_navigation a{width:50%!important}}h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h1,h2,h3{margin:0 0 20px;font-weight:800;color:#FFF;word-break:break-word}.text_style{font-size:14px;line-height:16px}.align_left{text-align:left}.align_right{text-align:right}.align_center{text-align:center}.comment{font-size:12px;color:rgba(255,255,255,.5);padding:5px;border:1px dashed #ccc;background-color:rgba(255,255,255,.5);margin:10px 0}a{color:#FF9800;text-decoration:none;word-break:break-all}.divider{margin:10px;border-bottom:1px solid #FF9800}pre{overflow:auto;background-color:#ccc;border-left:5px solid #FF9800;color:#4d4e53;font-weight:400}img.screenshot{width:100%;text-align:left;margin:10px 0}.student_info img{width:200px;-webkit-border-radius:50%;border-radius:50%}.lessons_navigation{clear:both}.lessons_navigation a{width:20%;float:left;padding:10px;height:150px;display:flex;justify-content:center;align-items:center;transition:all .1s ease;font-weight:800;text-shadow:0 0 30px rgba(255,255,255,.5);background-blend-mode:luminosity}.lessons_navigation a:hover{color:#fff;text-shadow:0 0 30px rgba(0,0,0,.5);text-decoration:underline;box-shadow:inset 0 0 0 3px #fff;background-blend-mode:normal}.lessons_navigation a.web_request{background:url(images/web_request.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.vcs{background:url(images/vcs.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.intro_js{background:url(images/introduction_js.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.functions{background:url(images/functions.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.types{background:url(images/types.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.dom{background:url(images/dom.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.jquery{background:url(images/jquery.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.inheritance{background:url(images/inheritance.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.ajax{background:url(images/ajax.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}button{color:#fff;background:#FF9800;padding:10px;outline:0;cursor:pointer;border:none;transition:all .2s ease}button:hover{background-color:#ffac32;text-shadow:0 0 3px rgba(0,0,0,.25)}
+    button,h1,h2,h3{text-transform:uppercase}body,html{width:100%;min-height:100%;padding:0;margin:0;font-family:'Open Sans',sans-serif}body{-webkit-background-size:cover;background-size:cover;color:#fff;padding:40px 0;font-weight:400}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{height:1%}.img-responsive,.student_info img{height:auto;max-width:100%}.clearfix{display:block}.comment,.img-responsive,.student_info img,img.screenshot{display:inline-block}.section_content{width:70%;margin:0 auto;padding:40px 25px;background-color:#131313;box-shadow:0 16px 20px 6px #000;-moz-box-shadow:0 16px 20px 6px #000;-webkit-box-shadow:0 16px 20px 6px #000}@media(max-width:991px){.section_content{width:80%!important}.lessons_navigation a{width:25%!important}}@media(max-width:768px){.section_content{width:90%!important}.lessons_navigation a{width:50%!important}}h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h1,h2,h3{margin:0 0 20px;font-weight:800;color:#FFF;word-break:break-word}.text_style{font-size:14px;line-height:16px}.align_left{text-align:left}.align_right{text-align:right}.align_center{text-align:center}.comment{font-size:12px;color:rgba(255,255,255,.5);padding:5px;border:1px dashed #ccc;background-color:rgba(255,255,255,.5);margin:10px 0}a{color:#FF9800;text-decoration:none;word-break:break-all}.divider{margin:10px;border-bottom:1px solid #FF9800}pre{overflow:auto;background-color:#ccc;border-left:5px solid #FF9800;color:#4d4e53;font-weight:400}img.screenshot{width:100%;text-align:left;margin:10px 0}.student_info img{width:200px;-webkit-border-radius:50%;border-radius:50%}.lessons_navigation{clear:both}.lessons_navigation a{width:20%;float:left;padding:10px;height:150px;display:flex;justify-content:center;align-items:center;transition:all .1s ease;font-weight:800;text-shadow:0 0 30px rgba(255,255,255,.5);background-blend-mode:luminosity}.lessons_navigation a:hover{color:#fff;text-shadow:0 0 30px rgba(0,0,0,.5);text-decoration:underline;box-shadow:inset 0 0 0 3px #fff;background-blend-mode:normal}.lessons_navigation a.web_request{background:url(css/images/web_request.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.vcs{background:url(css/images/vcs.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.intro_js{background:url(css/images/introduction_js.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.functions{background:url(css/images/functions.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.types{background:url(css/images/types.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.dom{background:url(css/images/dom.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.jquery{background:url(css/images/jquery.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.inheritance{background:url(css/images/inheritance.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}.lessons_navigation a.ajax{background:url(css/images/ajax.jpg) 50% #000;-webkit-background-size:cover;background-size:cover}button{color:#fff;background:#FF9800;padding:10px;outline:0;cursor:pointer;border:none;transition:all .2s ease}button:hover{background-color:#ffac32;text-shadow:0 0 3px rgba(0,0,0,.25)}
   </style>
+  <link rel="stylesheet" type="text/css" href="css/performance-print.css" media="print">
 </head>
 <body>
-	<section class="section_content">
-		<a href="index.html">&larr; back</a>
-		<h1>Web Performance and Optimization</h1>
-		<p class="text_style">
-			Homework info: <a href="https://gist.github.com/itspoma/96795f40756519006a6e" target="_blank">https://gist.github.com/itspoma/96795f40756519006a6e</a>
-		</p>
-		<div class="divider"></div>
+  <section class="section_content">
+    <a href="index.html">&larr; back</a>
+    <h1>Web Performance and Optimization</h1>
+    <p class="text_style">
+      Homework info: <a href="https://gist.github.com/itspoma/96795f40756519006a6e" target="_blank">https://gist.github.com/itspoma/96795f40756519006a6e</a>
+    </p>
+    <div class="divider"></div>
 
-		<h2>1.Analyze http://google.com/ by Google Developer Tools</h2>
-		<div class="text_style">
-			Використовується архівування файлів за допомогою gzip (content-encoding:gzip)
-			<br>
-			Зменшений css, js
-			<br>
-			Більшість основних картинок передано у base64 + спрайти
-		</div>
+    <h2>1.Analyze http://google.com/ by Google Developer Tools</h2>
+    <div class="text_style">
+      Використовується архівування файлів за допомогою gzip (content-encoding:gzip)
+      <br>
+      Зменшений css, js
+      <br>
+      Більшість основних картинок передано у base64 + спрайти
+    </div>
 
-		<h2>2.Analyze http://github.com/ using YSlow, PageSpeed and webpagetest</h2>
-		<div class="text_style">
-			pageSpeed
-			<img src="img/performance/q2_pagespeed.jpg" alt="" class="img-responsive">
-			webpagetest
-			<img src="img/performance/q2_webpagetest.jpg" alt="" class="img-responsive">
-			<br>
-			<br>
-			YSlow відмовився обробляти сторінку github з alert: For security reason, framing is not allowed :/
-			Попробував на інших сайтах - pageSpeed і webpagetest більш симпатичніші.
-			<br>
-			<br>
-			Що до github, то pageSpeed і webpagetest сваряться на деякі неоптимізовані картинки, а сам pageSpeed - на підключення css в head, всі остальні рекомендаційні правила виконані повністю.
-			<br>
-			До цього часу не був знайомий з webpagetest, але дуже сподобалась його статистика по повторному запиту до сайту.
-			<br>
-			В майбутньому планую використовувати PageSpeed + webpagetest
-		</div>
+    <h2>2.Analyze http://github.com/ using YSlow, PageSpeed and webpagetest</h2>
+    <div class="text_style">
+      pageSpeed
+      <br><br>
+      <img src="img/performance/q2_pagespeed.jpg" alt="" class="img-responsive">
+      <br><br>
+      webpagetest
+      <br><br>
+      <img src="img/performance/q2_webpagetest.jpg" alt="" class="img-responsive">
+      <br>
+      <br>
+      YSlow відмовився обробляти сторінку github з alert: For security reason, framing is not allowed :/
+      Попробував на інших сайтах - pageSpeed і webpagetest більш симпатичніші.
+      <br>
+      <br>
+      Що до github, то pageSpeed і webpagetest сваряться на деякі неоптимізовані картинки, а сам pageSpeed - на підключення css в head, всі остальні рекомендаційні правила виконані повністю.
+      <br>
+      До цього часу не був знайомий з webpagetest, але дуже сподобалась його статистика по повторному запиту до сайту.
+      <br>
+      В майбутньому планую використовувати PageSpeed + webpagetest
+    </div>
 
-		<h2>3.Implement a non-optimized web page (single-file) with as much possible bugs (slow queries, fake ajax request, wrong image links, etc)</h2>
-		<div class="text_style">
-		</div>
+    <h2>3.Implement a non-optimized web page (single-file) with as much possible bugs (slow queries, fake ajax request, wrong image links, etc)</h2>
+    <div class="text_style">
+      Не став придумувати велосипед і провірив сторінку через PageSpeed.
+      <br>
+      Результат:
+      <br><br>
+      <img src="img/performance/not_optimized.jpg" alt="" class="img-responsive">
+    </div>
 
-		<h2>4.Eliminate bugs in above app</h2>
-		<div class="text_style">
-		</div>
+    <h2>4.Eliminate bugs in above app</h2>
+    <div class="text_style">
+      Роботи проведені по оптимізації:
+      <ol>
+        <li>оптимізовані картинки за допомогою tinypng.com </li>
+        <li>
+          підключена мета для моб пристроїв (забув це зробити з самого початку :/ )
+          <br>
+          meta content="initial-scale=1, width=device-width" name="viewport"
+        </li>
+        <li>шрифти підключались через @import, тепер - винесені в окремий файл і підключаються в кінці сторінки</li>
+        <li>
+          основний css - стиснув і помістив у тег style (оскільки його мало)
+        </li>
+      </ol>     
+      Це все призвело до:
+      <br><br>
+      <img src="img/performance/optimized.jpg" alt="" class="img-responsive">
+    </div>
 
-		<h2>5.Use "DOMContentLoaded" & "onload" events</h2>
-		<div class="text_style">
-		</div>
+    <h2>5.Use "DOMContentLoaded" & "onload" events</h2>
+    <div class="text_style">
+      DOMContentLoaded - браузер повністю завантажив HTML і побудував DOM.
+      <br>
+      onload - браузер завантажив всі ресурси (css/images/etc)
+    </div>
+    <pre>
+      <code>
+    console.time('DOMContentLoaded');
+    console.time('onload');
+    document.addEventListener("DOMContentLoaded", function(){
+      console.timeEnd('DOMContentLoaded');
+    });
+    window.onload = function() {
+      console.timeEnd('onload');
+    };    
+      </code>
+    </pre>
+    <script>
+      console.time('DOMContentLoaded');
+      console.time('onload');
+      document.addEventListener("DOMContentLoaded", function(){
+        console.timeEnd('DOMContentLoaded');
+      });
+      window.onload = function() {
+        console.timeEnd('onload');
+      };
+    </script>
 
-		<h2>6.Use media="print" for "link" tag</h2>
-		<div class="text_style">
-		</div>
+    <h2>6.Use media="print" for "link" tag</h2>
+    <div class="text_style">
+      Додав link rel="stylesheet" type="text/css" href="css/performance-print.css" media="print"
+      <br>
+      При нажатті ctrl+p результат:
+      <br><br>
+      <img src="img/performance/print.jpg" alt="" class="img-responsive">
+    </div>
 
-		<h2>7.Play with localStorage</h2>
-		<div class="text_style">
-		</div>
+    <h2>7.Play with localStorage</h2>
+    <pre>
+      <code>
+    var counter = localStorage.getItem('on_load_counter');
+    
+    if (counter === null) {
+      counter = 0;
+    }
+    counter++;
+     
+    localStorage.setItem("on_load_counter", counter);
+    console.log('Page was reloaded: ' + localStorage.getItem('on_load_counter') + ' times');   
+      </code>
+    </pre>
+    <script>
+      var counter = localStorage.getItem('on_load_counter');
+    
+      if (counter === null) {
+        counter = 0;
+      }
+      counter++;
+       
+      localStorage.setItem("on_load_counter", counter);
+      console.log('Page was reloaded: ' + localStorage.getItem('on_load_counter') + ' times');
+    </script>
 
-		<h2>8.Add expiring ((new Date).getTime()) for localStorage data</h2>
-		<div class="text_style">
-		</div>
+    <h2>8.Add expiring ((new Date).getTime()) for localStorage data</h2>
+    <pre>
+      <code>
+    var counter2 = localStorage.getItem('on_load_counter_two');
 
-		<h2>9.Play with sessionStorage</h2>
-		<div class="text_style">
-		</div>
+    var d = new Date().getSeconds();
+    setTimeout(function(){
+      if(d>10) localStorage.setItem("on_load_counter_two", 0)
+    }, 1000);
 
-		<h2>10.Read about data uri, and use image base64</h2>
-		<div class="text_style">
-		</div>
+    if (counter2 === null) {
+      counter2 = 0;
+    }
+    counter2++;
+     
+    localStorage.setItem("on_load_counter_two", counter2);
+    console.log('(with reset 10s) Page was reloaded: ' + localStorage.getItem('on_load_counter_two') + ' times');       
+      </code>
+    </pre>
+    <script>
+      var counter2 = localStorage.getItem('on_load_counter_two');
 
-		<h2>11.Read about Accept-Encoding request header</h2>
-		<div class="text_style">
-		</div>
+      var d = new Date().getSeconds();
+      setTimeout(function(){
+        if(d>10) localStorage.setItem("on_load_counter_two", 0)
+      }, 1000);
 
-		<h2>12.Read about gzip/deflate</h2>
-		<div class="text_style">
-		</div>
+      if (counter2 === null) {
+        counter2 = 0;
+      }
+      counter2++;
+       
+      localStorage.setItem("on_load_counter_two", counter2);
+      console.log('(with reset 10s) Page was reloaded: ' + localStorage.getItem('on_load_counter_two') + ' times');
+    </script>
 
-		<h2>13.Use image sprite</h2>
-		<div class="text_style">
-		</div>
+    <h2>9.Play with sessionStorage</h2>
+    <form action="" id="form">
+      <input type="text" class="input" name="login">
+      <p class="login_error"></p>
+      <input type="password" class="input" name="password">
+      <p class="password_error"></p>
+      <button id="check">Login</button>
+    </form>
+    
+    <pre>
+      <code>
+    document.getElementById('check').addEventListener('click', function(event){
+      event.preventDefault();
+      if (form.login.value != 'admin') {
+        document.getElementsByClassName('login_error')[0].innerHTML = 'sorry, wrong login'
+      } else {
+        sessionStorage.setItem('login', form.login.value);
+      }
 
-		<h2>14.what is wrong -img src=""- ?</h2>
-		<div class="text_style">
-		</div>
+      if (form.password.value != '123') {
+        document.getElementsByClassName('password_error')[0].innerHTML = 'sorry, wrong password'
+      } else {
+        sessionStorage.setItem('password', form.password.value);
+      }
+      
+      console.log(sessionStorage.getItem('login'));
+      console.log(sessionStorage.getItem('password'));
+    });    
+      </code>
+    </pre>
 
-		<h2>15.Implement a low/high quality image loading</h2>
-		<div class="text_style">
-		</div>
+    <script>
+      document.getElementById('check').addEventListener('click', function(event){
+        event.preventDefault();
+        if (form.login.value != 'admin') {
+          document.getElementsByClassName('login_error')[0].innerHTML = 'sorry, wrong login'
+        } else {
+          sessionStorage.setItem('login', form.login.value);
+        }
 
-		
-	</section>
+        if (form.password.value != '123') {
+          document.getElementsByClassName('password_error')[0].innerHTML = 'sorry, wrong password'
+        } else {
+          sessionStorage.setItem('password', form.password.value);
+        }
+        
+        console.log(sessionStorage.getItem('login'));
+        console.log(sessionStorage.getItem('password'));
+      });
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    </script>
+
+    <h2>10.Read about data uri, and use image base64</h2>
+    <div class="text_style">
+      base64 img
+      <br><br>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAABQJJREFUeJzt3dFPm1UcxvHnPaUt0OEoAxEWQJawTDenTN0SQYOL3bpoojE6dTdGMyFxF2D4DzbjrSOZiNypGdGMP4CbLbpN0guXkOHF5AK7LGRLhKRkCSWsPa8XQkLesI6t7+np29/zuSIpOf2Rfjmc0rfgwKP34+8Ouo5zGhoJDbQppWLez6EA0fqBC5UGcAUhNTY90T+z+WZn44NkciR6Px4+D2AAUA6oIrmuO65zK0OpyeEssB5AMjkSXY5HpxTQZ3U6Kg1XX83nssnU5HBWAcD9ePg8H3xBHPWGCsW+BQBn/Wf+DLd9eVxHdSvXcU7zwZfJ0fl+BY2E7UHIFueo0kCb7THIEkd3Kj7Pl0xFlO0RyC4GIBwDEI4BCMcAhGMAwjEA4RiAcAxAOAYgHAMQrsr2AJWorWUnXt6/G10du9DeUo9nmuoQq4mgtiaMqlBx33O9p37wacr/MQCftDTV4Z039+FYTxdamupsj7NtDKBI7S31+OLkq+g7vAdOAC+rYQBPKBIOof+jwziZfAEqwBdUMYAnsKetAecGE+horbc9StEYwGM6crANZwffQqwmYnsUXzCAx9BzqAPffHUMoSJP8uWkcr4Sw7qfb8W5wURFPfgAA9iWpxti+HoogUg4ZHsU3zGARwiFFM4OJrBzR7XtUYxgAI/w4fEDONDVbHsMYxhAAY3xGD7/4BXbYxjFAAr49L1u1FaHbY9hFAN4iIb6Wrzdt8/2GMYxgId4P7G/Ik/9XgxgC44DnHh9r+0xSoIBbOGl51rR3LjD9hglwQC20Huow/YIJcMAtnDkRTnvmGcAHvGnavDs7rjtMUqGrwZ67O1sLMn93Lm7jGs30pidu4fbCxksZVawupZDPq9Lcv8bGIBHV8cuo+vPpRcxOpHCn38tGL2f7WIAHu0Gr/K5NDWLCxdTJf8uL4QBeDQ3mHn6d2lqFiM/TRtZuxg8BHo0Nvj/J5Pm0ou4cDHl+7p+YAAeJl73H50or21/MwbgEY34+/v/O3eXy+bAtxUG4BGN+HssunYj7et6fmMAHn6/yWN27p6v6/mNARh2eyFje4SCGIBhS5kV2yMUxAAMW13L2R6hIAZgWLk+/dvAAIRjAMIxAOEYgHAMQDgGIBwDEM7p+WTMtT2En65PDNgewZilzAre/fJnX9fkDhAgt+b/9X1NBhAgf//DAES7Nb/o+5oMIEC4Awi2lFkx8tIyAwgIEwdAgAEEhontH2AAgWHiAAgwgMDgDiCYqQMgwAACwdQBEGAAgWBq+wcYQCCYOgACDCAQuAMIZvIACDCAsmfyAAgwgLJncvsHGEDZM3kABBhA2TO9A1TcNYHF8vuaQr//16/fuAMIxwCEYwDCMQDhGIBwDEA4BiAcAxCOAQjHAIRjAMIxAOEYgHAMQDgGIBwDEI4BCMcAhGMAwjEA4RiAcAxAOAYgHAMQjgEIxwCEYwDCMQDhGIBwDEA4BiAcAxCOAQjHAIRjAMIxAOEYgHAMQDgGIJyC1g9sD0G26DXlQqVtj0GWaMwrAFdsz0F2uMq5rBBSY7YHITuUq8fV9ET/jOu647aHodJyNUav/3LmpgIAnVsZgquv2h6KSkMDv4Wro8PA+tPA1ORwNp/LJrkTVD5XYzQSiZ74/cfPVgGgauOG1ORwFsDAa6fGv3d0vh9wjsLRnYCKWJuWfKDXoDHvKueycvX4H7+eubn51v8AYWQlhTwtTVsAAAAASUVORK5CYII=" alt="">
+      <br><br>
+      base64 background - на body цієї сторінки, винесено в окремий файл performance-bg.css
+    </div>
+
+    <h2>11.Read about Accept-Encoding request header</h2>
+    <div class="text_style">
+      Accept-Encoding - відповідає за узгодження методу кодування.
+      <br>
+      Кодування проводиться з метою більш оптимальної передачі даних. Основним механізмом, що забезпечує економію мережевих ресурсів і велику швидкість передачі даних, є стиснення вмісту. Стиснення Може здійснюватися за різними алгоритмами.
+      <br>
+      Accept-Encoding: gzip / deflate / identity - заборона будь-якого кодування
+      <br>
+      В HTTP/1.1 появився параметр q - це число від 0 до 1, що визначає ступінь переваги клієнтом того чи іншого методу кодування. Більш кращі методи позначаються більш високою оцінкою якості. Якщо оцінка якості відсутня, то за замовчуванням присвоюється найвища оцінка 1.
+    </div>
+
+    <h2>12.Read about gzip/deflate</h2>
+    <div class="text_style">
+    Gzip - це утиліта стиснення і відновлення (декомпресії) файлів, що використовує алгоритм Deflate. Deflate - це алгоритм стиснення даних "без втрат". Тобто Gzip це і є алгоритм Deflate.
+    <br> 
+    Різниця між чистим стисненням Deflate і стисненням Gzip полягає тільки в тому, що Gzip додає до результуючим даними невеликий заголовок, підпис і контрольну суму.
+    </div>
+
+    <h2>13.Use image sprite</h2>
+    <div class="sprite angular"></div>
+
+    <h2>14.what is wrong -img src=""- ?</h2>
+    <div class="text_style">
+    Internet Explorer робить запит до директорії, в якому знаходиться сторінка. <br>
+    Safari і Chrome зробити запит до самої фактичної сторінки. <br>
+    Firefox поводяться так само, як Safari і Chrome, але після версії 3.5 більше не відправляє повторний запит.<br>
+    Opera не робить нічого, коли зустрічається порожній src.<br>
+    Підсумок: пустий src змушує браузер робити повторний запит, що є поганим для швидкодії сторінки. За таке треба бити по пальцям))
+    </div>
+
+    <h2>15.Implement a low/high quality image loading</h2>
+    <img id="replacement_img" src="img/performance/performance.jpg" class="img-responsive" />
+    <pre>
+      <code>
+    window.onload = function() {
+      document.getElementById('replacement_img').src = 'img/performance/performance_full.jpg';
+    };
+      </code>
+    </pre>
+    <script>
+      window.onload = function() {
+        document.getElementById('replacement_img').src = 'img/performance/performance_full.jpg';
+      };
+    </script>
+  </section>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/performance-bg.css">
 </body>
 </html>
