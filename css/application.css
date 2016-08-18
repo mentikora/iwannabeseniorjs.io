@@ -232,6 +232,12 @@ img.screenshot{
       -webkit-background-size: cover; 
       background-size: cover; 
     }
+    .lessons_navigation a.performance{
+      background: #000 url('images/performance.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
 
 button{
   color: #fff;
