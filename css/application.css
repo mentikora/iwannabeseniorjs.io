@@ -238,6 +238,12 @@ img.screenshot{
       -webkit-background-size: cover; 
       background-size: cover; 
     }
+    .lessons_navigation a.tools{
+      background: #000 url('images/tools.jpg') 50%;
+      
+      -webkit-background-size: cover; 
+      background-size: cover; 
+    }
 
 button{
   color: #fff;

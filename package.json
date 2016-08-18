@@ -1,0 +1,29 @@
+{
+  "name": "iwannabeseniorjs.io",
+  "version": "1.0.0",
+  "description": "Cursor frontend \"Tickets.js\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mentikora/iwannabeseniorjs.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mentikora/iwannabeseniorjs.io/issues"
+  },
+  "homepage": "https://github.com/mentikora/iwannabeseniorjs.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "numeral": "^1.5.3"
+  }
+}
