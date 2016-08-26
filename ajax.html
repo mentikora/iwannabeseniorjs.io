@@ -11,13 +11,49 @@
 <body>
   <section class="section_content">
     <a href="index.html">&larr; back</a>
-    <h1>Ajax & COMET & CORS</h1>
+    <h1>Ajax</h1>
     <p class="text_style">
-      Homework info: <!-- <a href="https://gist.github.com/kurjoz/f8484ccc8287fe425e54331b054e4187" target="_blank">https://gist.github.com/kurjoz/f8484ccc8287fe425e54331b054e4187</a> -->
+      Homework info: <a href="https://gist.github.com/itspoma/dc06173f73cab78617f31765131cc8cc" target="_blank">https://gist.github.com/itspoma/dc06173f73cab78617f31765131cc8cc</a>
     </p>
     <div class="divider"></div>
 
-    <h2>1.</h2>
+    <h2>1. Twitter REST API</h2>
+    <p class="text_style">
+      get 10 popular users and generate list of links (by using the Twitter REST API) <br>
+      you can use jQuery or any framework for AJAX calls
+    </p>
+
+    <h2>2. Native methods for AJAX requests</h2>
+    <p class="text_style">
+      use the native methods (xhr) for AJAX requests <br>
+      show 20 latest posts of user, which you clicked on (base on list from previous level)
+    </p>
+    <!-- https://www.sitepoint.com/jquery-vs-raw-javascript-3-events-ajax/ -->
+
+    <h2>3. api.github</h2>
+    <p class="text_style">
+      using api.github implement your own plugin for ajax requests, with below API: <br>
+      ajax({ ... }).done(function (...) { ... }) <br>
+      ajax.get(url, headers).done(function (...) { ... }) <br>
+      ajax.post(url, data, headers).done(function (...) { ... }) <br>
+      ajax.head(url, headers).done(function (...) { ... }) <br>
+      ajax.put(url, headers).done(function (...) { ... })
+    </p>
+    <!-- https://habrahabr.ru/post/42426/ -->
+
+    <h3>3.1 add to your lib the below API</h3>
+    <p class="text_style">
+      var Users = ajax.resource('http://..../api/v1/users') <br>
+      Users.list().done(function(users) { ... }) <br>
+      Users.get(id).done(function(user) { ... }) <br>
+      Users.get(id).done(function(user) { user.name = "other"; user.save().done()...; })
+    </p>
+
+    <h2>4. WebSocket</h2>
+    <p class="text_style">
+      implement the WebSocket communication using the npm/websocket module
+    </p>
+    <!-- https://www.npmjs.com/package/websocket -->
 
   </section>
 </body>
