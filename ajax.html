@@ -39,6 +39,33 @@
       ajax.head(url, headers).done(function (...) { ... }) <br>
       ajax.put(url, headers).done(function (...) { ... })
     </p>
+    
+    <div id="sort">
+      <p></p>
+    </div>
+
+    <script>
+    (function($) {
+      $.fn.aj = function(){
+
+        return this;
+      }
+    })(jQuery);
+
+
+    $('document').ready(function(){
+      $.ajax({
+        url: "https://api.github.com/users/mentikora",
+        dataType: "json",             
+        success: function(data, getStatus){
+          $.each(data, function(i, val){
+            $('#sort').append(i +" "+ val + "<br>");
+          });
+        }
+      });  
+    });
+      
+    </script>
     <!-- https://habrahabr.ru/post/42426/ -->
 
     <h3>3.1 add to your lib the below API</h3>
